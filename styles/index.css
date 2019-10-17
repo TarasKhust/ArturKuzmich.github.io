@@ -3,6 +3,7 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: cursive;
 }
 
 .background-image {
@@ -10,13 +11,16 @@
   z-index: -1;
   width: 100vw;
   height: 100vh;
-  background-image: url(../images/home.jpg);
   background-size: cover;
+  background-image: url(../images/home.jpg);
   background-position: center;
 }
 
 .show__header {
+  position: fixed;
   z-index: 1;
+  top: 15px;
+  left: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -29,9 +33,6 @@
           justify-content: space-between;
   width: 40px;
   height: 40px;
-  position: fixed;
-  top: 15px;
-  left: 15px;
   cursor: pointer;
 }
 
@@ -40,15 +41,34 @@
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  height: 27%;
-  background: white;
+  height: 25%;
+  background: #4e75f6;
 }
 
-.show__header .show__inner {
+.show__header .show__row .show__inner {
   width: 0px;
-  background: fuchsia;
-  -webkit-transition: all ease .5s;
-  transition: all ease .5s;
+  background: white;
+  -webkit-transition: all ease .3s;
+  transition: all ease .3s;
+}
+
+.show__header .show__row:nth-child(3n + 1) .show__inner {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+
+.show__header .show__row:nth-child(3n + 2) .show__inner {
+  -webkit-transition-delay: .10s;
+          transition-delay: .10s;
+}
+
+.show__header .show__row:nth-child(3n + 3) .show__inner {
+  -webkit-transition-delay: .20s;
+          transition-delay: .20s;
+}
+
+.show__header:hover .show__inner {
+  width: 100%;
 }
 
 #show__header {
@@ -62,17 +82,51 @@
 .header {
   position: fixed;
   left: 100vw;
+  height: 70px;
   width: 100vw;
-  height: 100px;
-  background: goldenrod;
+  background: #4e75f6;
 }
 
 .wrapper__block {
-  height: 50vh;
   min-height: 100vh;
 }
 
 .wrapper__block:nth-child(even) {
   background: white;
+}
+
+.navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  background: #4e75f6;
+  border-bottom: 2px #4e75f6;
+}
+
+.navigation > ul {
+  width: 600%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #4e75f6;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 10px;
+}
+
+.navigation > ul > li {
+  list-style-type: none;
+}
+
+.navigation > ul > li > a {
+  font-size: 18px;
+  font-weight: bold;
+  font-style: oblique;
+  color: black;
+  text-decoration: none;
 }
 /*# sourceMappingURL=index.css.map */

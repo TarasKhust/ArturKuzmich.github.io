@@ -2,59 +2,54 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: cursive;
 }
 
-
-
-
-.background-image{
+.background-image {
     position: fixed;
     z-index: -1;
     width: 100vw;
     height: 100vh;
-    background-image: url(../images/home.jpg);
     background-size: cover;
+    background-image: url(../images/home.jpg);
     background-position: center;
 }
 
-.show__header{
+
+.show__header {
+    position: fixed;
     z-index: 1;
+    top: 15px;
+    left: 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 40px;
     height: 40px;
-    position: fixed;
-    top: 15px;
-    left: 15px;
     cursor: pointer;
-
 
     & .show__row {
         display: flex;
         width: 100%;
-        height: 27%;
-        background: white;
+        height: 25%;
+        background: #4e75f6;
 
-    
-    .show__inner{
-        width: 0px;
-        background: fuchsia;
-        transition: all ease .5s;
+        & .show__inner {
+           width: 0px;
+           background: white;
+           transition: all ease .3s;
+           
+        }
+        
+        &:nth-child(3n + 1) .show__inner {transition-delay: 0s;}
+        &:nth-child(3n + 2) .show__inner {transition-delay: .10s;}
+        &:nth-child(3n + 3) .show__inner {transition-delay: .20s;}
     }
-        &:nth-child(3n+1)) .show__inner {transition-delay: 0s;}
-        &:nth-child(3n+2) .show__inner {transition-delay: .25s;}
-        &:nth-child(3n+3) .show__inner {transition-delay: .5s;}
 
+    &:hover .show__inner {
+        width: 100%;
+        
     }
-
-    
-
-
-
-
-&:hover .show__inner{
-width: 100%;
 }
 
 #show__header {
@@ -62,26 +57,55 @@ width: 100%;
 
     &:checked + .header {
         left: 0;
-
     }
 }
 
 .header {
     position: fixed;
     left: 100vw;
+    height: 70px;
     width: 100vw;
-    height: 100px;
-    background: goldenrod;
-
-
+    background: #4e75f6;
 }
-.wrapper {
- &__block {
-     height: 50vh;
-     min-height: 100vh;
 
-     &:nth-child(even){
-         background: white;
+.wrapper {
+    &__block {
+        min-height: 100vh;
+
+        &:nth-child(even) {
+            background: white;
+        }
+    }
+}
+
+.navigation {
+    display: flex;
+    width: 100%;
+    background: #4e75f6;
+    border-bottom: 2px #4e75f6;
+    
+& > ul {
+    width: 600%;
+    display: flex;
+    background:#4e75f6;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+        
+& > li {
+    list-style-type: none;
+
+& > a {
+    font-size: 18px;
+     font-weight: bold;
+    font-style: oblique;
+    color: black;
+    text-decoration: none;
+                
      }
  }
-}
+        
+ }
+    
+ }
+
