@@ -43,6 +43,8 @@
   width: 100%;
   height: 25%;
   background: #4e75f6;
+  border-radius: 50px;
+  overflow: hidden;
 }
 
 .show__header .show__row .show__inner {
@@ -73,10 +75,19 @@
 
 #show__header {
   display: none;
+  border-radius: 50px;
 }
 
 #show__header:checked + .header {
   left: 0;
+  top: 0;
+  opacity: 1;
+}
+
+#show__header:checked + .header .active {
+  opacity: 1;
+  -webkit-transition: all ease .5s;
+  transition: all ease .5s;
 }
 
 .header {
@@ -84,7 +95,18 @@
   left: 100vw;
   height: 70px;
   width: 100vw;
-  background: #4e75f6;
+  background: #000;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+  left: -100vw;
+  top: -30;
+  opacity: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .wrapper__block {
@@ -99,9 +121,18 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
-  background: #4e75f6;
-  border-bottom: 2px #4e75f6;
+  width: 50%;
+  background: #000;
+  border-bottom: 2px  #000;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 10;
+  -webkit-transition: all ease .8s;
+  transition: all ease .8s;
 }
 
 .navigation > ul {
@@ -109,24 +140,43 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background: #4e75f6;
+  background: #000;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   padding: 10px;
+  -webkit-transition: all ease .4s;
+  transition: all ease .4s;
 }
 
 .navigation > ul > li {
   list-style-type: none;
+  -webkit-transition: all ease .2s;
+  transition: all ease .2s;
 }
 
 .navigation > ul > li > a {
   font-size: 18px;
   font-weight: bold;
   font-style: oblique;
-  color: black;
+  color: white;
   text-decoration: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@-webkit-keyframes toggle {
+  from {
+    width: 10px;
+  }
+}
+
+@keyframes toggle {
+  from {
+    width: 10px;
+  }
 }
 /*# sourceMappingURL=index.css.map */

@@ -1,0 +1,30 @@
+.container {
+  background: #ccc;
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.column2 {
+  background: #E8E8E8;
+  float: left;
+  width: 300px;
+  height: 300px;
+  margin: 16px;
+}
+
+.column1 {
+  background: #E8E8E8;
+  float: left;
+  width: 300px;
+  height: 300px;
+  margin: 16px;
+}
+
+.column3 {
+  background: #E8E8E8;
+  float: left;
+  width: 300px;
+  height: 300px;
+  margin: 16px;
+}
+/*# sourceMappingURL=index.css.map */
