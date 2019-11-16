@@ -23,8 +23,9 @@ html {
   z-index: -1;
   width: 100vw;
   height: 100vh;
+  shape-image-threshold: 0.5;
   background-size: cover;
-  background-image: url(../images/home.jpg);
+  background-image: url(../images/newHomePage.jpeg);
   background-position: center;
 }
 
@@ -64,7 +65,11 @@ html {
   float: left;
 }
 
-a, a:link, a:active, a:visited, a:hover {
+a,
+a:link,
+a:active,
+a:visited,
+a:hover {
   color: inherit;
   text-decoration: underline;
   outline: none;
@@ -167,13 +172,9 @@ a, a:link, a:active, a:visited, a:hover {
   min-height: 100vh;
 }
 
-.wrapper__block:nth-child(even) {
-  background: white;
-}
-
 .wrapper__block > p {
-  color: #252525;
-  font-family: "open_sansregular",Arial,Helvetica,sans-serif;
+  color: white;
+  font-family: "open_sansregular", Arial, Helvetica, sans-serif;
   font-size: 15px;
   line-height: 1.4;
   font-style: normal;
@@ -188,7 +189,7 @@ a, a:link, a:active, a:visited, a:hover {
   padding: 0;
   font-size: 16px;
   font-weight: normal;
-  font-family: "open_sansbold",Arial,Helvetica,sans-serif;
+  font-family: "open_sansbold", Arial, Helvetica, sans-serif;
   text-align: center;
 }
 
@@ -197,15 +198,99 @@ h2 {
   font-size: 30px;
   padding: 0 10px 15px;
   text-align: center;
-  font-family: "open_sanssemibold",Arial,Helvetica,sans-serif;
+  font-family: "open_sanssemibold", Arial, Helvetica, sans-serif;
 }
 
 h3 {
-  color: #555555;
+  color: #060681;
   font-size: 22px;
   padding: 0 10px 15px;
   text-align: center;
-  font-family: "open_sanssemibold",Arial,Helvetica,sans-serif;
+  font-family: "open_sanssemibold", Arial, Helvetica, sans-serif;
+}
+
+.p-center {
+  position: relative;
+  margin-bottom: 5px;
+  width: 100%;
+  top: 10px;
+  text-align: center !important;
+}
+
+.p-center > p {
+  position: relative;
+  background-color: blue;
+  color: #fff;
+  display: inline-block;
+  margin-bottom: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0 12px;
+  letter-spacing: 1px;
+}
+
+.p-center > p::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border: 11px solid #1957f3;
+  z-index: 2;
+  left: -12px;
+  border-right-width: 11px;
+  border-left-color: transparent !important;
+}
+
+.p-center > p::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border: 11px solid blue;
+  z-index: 2;
+  right: -12px;
+  border-right-width: 11px;
+  border-left-color: transparent;
+}
+
+.arrow_down {
+  background-color: #fff;
+  border-bottom: 7px solid #1957f3;
+  position: relative;
+}
+
+.arrow_down::after {
+  border: medium solid transparent;
+  content: "";
+  top: 100%;
+  left: 50%;
+  position: absolute;
+  height: 0;
+  width: 0;
+  border-color: #1957f3 rgba(255, 212, 52, 0) rgba(255, 212, 52, 0);
+  border-width: 25px;
+  margin-left: -25px;
+}
+
+.p-center > p:hover {
+  border-radius: 70%;
+  -webkit-transform: rotateZ(30deg);
+  transform: rotateZ(30deg);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.about__img {
+  width: 15%;
+  height: 50%;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.about__img2 {
+  width: 15%;
+  height: 50%;
+  float: right;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
 .navigation {
@@ -214,7 +299,7 @@ h3 {
   display: flex;
   width: 50%;
   background: #000;
-  border-bottom: 2px  #000;
+  border-bottom: 2px #000;
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
@@ -356,7 +441,11 @@ h3 {
   width: 768px;
 }
 
-a, a:link, a:active, a:visited, a:hover {
+a,
+a:link,
+a:active,
+a:visited,
+a:hover {
   color: inherit;
   text-decoration: underline;
   outline: none;
@@ -413,8 +502,27 @@ a, a:link, a:active, a:visited, a:hover {
   transition-property: transform, opacity, -webkit-transform;
 }
 
-.isotope, .isotope .isotope-item {
+.isotope,
+.isotope .isotope-item {
   -webkit-transition-duration: 0.8s;
           transition-duration: 0.8s;
+}
+
+@media screen and (max-width: 600px) {
+  .navigation {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .navigation > li {
+    float: left;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .a {
+    text-align: center;
+  }
 }
 /*# sourceMappingURL=index.css.map */
