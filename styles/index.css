@@ -260,13 +260,13 @@ h3 {
   width: 50%;
   background: #000;
   border-bottom: 2px #000;
-  display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   opacity: 10;
+  margin: 0 auto;
   -webkit-transition: all ease .8s;
   transition: all ease .8s;
 }
@@ -470,13 +470,17 @@ a:hover {
 
 @media screen and (max-width: 600px) {
   .navigation {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
+    float: right;
+    padding: 23px 10px 10px 20px;
+    display: contents;
+    margin: 0 auto;
   }
-  .navigation > li {
-    float: left;
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    margin: 0px auto;
+    padding: 35px;
   }
 }
 

@@ -74,38 +74,96 @@
 
 
 
-const random = () =>  Math.round(Math.random() * 255);
+///const random = () =>  Math.round(Math.random() * 255);
 
 
-let timer = setInterval(render, 500);
+//let timer = setInterval(render, 500);
 
 
-function render(selector = '#app') {
-    let html = '';
+//function render(selector = '#app') {
+   // let html = '';
 
-    for(let i = 0; i < 500; i++){
-        html += `
-        <div
-            style="
-            width: 50px;
-            height: 50px;
-            background: rgb(${random()}, ${random()}, ${random()});
-        "
-        ></div>
+  //  for(let i = 0; i < 500; i++){
+   //     html += `
+   //     <div
+    //        style="
+    //        width: 50px;
+     //       height: 50px;
+      //      background: rgb(${random()}, ${random()}, ${random()});
+        //"
+       // ></div>
 
-        `;
-    }
+      //  `;
+    //}
+///
+//const element = document.querySelector(selector);
 
-    const element = document.querySelector(selector);
+  //  if (element){
+    //    element.innerHTML = html;
 
-    if (element){
-        element.innerHTML = html;
+   // }
+     //   else {
+    //        console.log('no element')
+   //         clearInterval(timer);
+   //     }
+//}
 
-    }
-        else {
-            console.log('no element')
-            clearInterval(timer);
-        }
-}
 
- 
+//function Example(){
+   // this.field1 = 123
+   // this.field2 = "fsdf"
+
+  //  this.log = function(){
+   //     console.log(this)
+   // }
+///}
+
+//const ex1 = new Example();
+
+//console.log(ex1)
+
+// картинки двигаются с начала до конца экрана 
+//function Car(selector, speed, distanse){
+//    this.carWidth = 100;
+ //   this.car = document.querySelector(selector);
+ //   this.car.style.width = `${this.carWidth}px`;
+
+  //  this.speed  = speed;
+  //  this.distanse = distanse;
+   // this.isRun = null;
+  //  this.run = function() {
+
+   //     if(this.isRun) return;
+
+
+    //    this.isRun = setInterval(() => {
+   //         this.distanse += this.speed;
+//
+
+   //         const maxWidth = window.innerWidth;
+   //         const currentWidth = this.distanse + this.carWidth;
+
+   //         if (currentWidth >= maxWidth){
+   //             this.stop()
+    //            this.distanse = maxWidth - this.carWidth;
+    //        }
+
+     //       this.move();
+    //    }, 1000);
+   // }
+   // this.accelerate = function(){
+   //     this.speed *= 2;
+   // }
+    //this.stop = function(){
+    //    clearInterval(this.isRun);
+    //    this.isRun = null;
+   // }
+   // this.move = function(){
+   //     this.car.style.left = `${this.distanse}px`;
+   // }
+//}
+
+//const car1 = new Car('#car1', 10, 0);
+//const car2 = new Car('#car2', 5, 20);
+
+

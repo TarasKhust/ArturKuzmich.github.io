@@ -1,5 +1,18 @@
 #app {
-    display: flex;
+    display: block;
     flex-wrap: wrap;
+    padding: 0;
 }
 
+
+#car1, #car2 {
+    width: 100px;
+    height: 100px;
+    left: 0;
+    position: relative;
+    transition: all ease 1s;
+}
+
+#car1 img, #car2 img{
+    width: 100%;
+}

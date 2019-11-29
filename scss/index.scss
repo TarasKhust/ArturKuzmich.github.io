@@ -269,11 +269,10 @@ h3 {
     width: 50%;
     background: #000;
     border-bottom: 2px #000;
-    display: flex;
     justify-content: space-around;
     align-items: center;
     opacity: 10;
-
+    margin: 0 auto;
     transition: all ease .8s;
 
     &>ul {
@@ -459,15 +458,20 @@ only screen and (max-device-width: 767px) {
 
     .navigation {
 
-
-
-        flex-direction: column-reverse;
-
-        &>li {
-            float: left;
-        }
+        float: right;
+        padding: 23px 10px 10px 20px;
+        display: contents;
+        margin: 0 auto;
     }
 }
+
+@media screen and (max-width: 600px) {
+    .header {
+        margin: 0px auto;
+        padding: 35px;
+        }
+    }
+
 
 
 @media screen and (max-width: 600px) {
