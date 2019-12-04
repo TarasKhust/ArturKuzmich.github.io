@@ -487,6 +487,7 @@ h1 {
 }
 
 .left-block {
+    position: absolute;
     cursor: pointer;
     width: 50%;
     height: 80%;
@@ -505,6 +506,7 @@ h1 {
     box-sizing: border-box;
     width: 80%;
     height: 54px;
+    top:85px;
     padding: 9px 15px;
     font: inherit;
     color: inherit;
@@ -518,7 +520,8 @@ h1 {
     width: 25%;
     height: 10%;
     float: right;
-    top: -50px;
+    top: 42px;
+    right: 20px;
 }
 
 
@@ -567,14 +570,14 @@ h1 {
 
 h4 {
     left: 37px;
-    top: -83px;
+    top: 22px;
     color: grey;
 }
 
 .price {
     width: 10px;
     height: 20px;
-    top: -82px;
+    top: -12px;
     right: -123px;
     font-weight: 600;
     font-size: 16px;
@@ -583,6 +586,7 @@ h4 {
 .reviews-list {
     display: block;
     height: 70%;
+    top: 85px;
 }
 
 .review-item {
@@ -644,126 +648,87 @@ a {
     background-color: transparent;
 }
 
-@media (max-width: 600px) {
-    .nav_mob {
-        padding: 0 20px;
-    }
-}
 
-@media (max-width: 600px) {
-    .nav_mob {
-        min-height: 85px;
-        position: relative;
-    }
-}
 
-@media (max-width: 600px) {
-    .menu_mobile {
-        display: block;
-        width: 28px;
-        height: 28px;
-        margin-top: 31px;
-    }
-}
-
-@media (max-width: 600px) {
-
-    .span,
-    span:after,
-    span:before {
-        width: 100%;
-        height: 2px;
-        background-color: #6f6d99;
-        -webkit-transition: all 0.3s;
-        -o-transition: all 0.3s;
-        transition: all 0.3s;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        border-radius: 2px;
-    }
-}
-
-@media (max-width: 600px) {
-
-    .span:after,
-    .span:before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 9px;
-    }
-}
-
-@media (max-width: 600px) {
+@media only screen and (max-width: 480px  ) {
     .back {
-        left: 74px;
+        left: 0px;
     }
 }
 
-@media (max-width: 600px) {
+@media only screen and (max-width: 480px) {
     .btn-block {
-        width: 50%;
-        right: -16px;
-        top: 41px;
+        width: 87%;
+        top: -22px;
+        left: 0px;
     }
 }
 
 
-@media (max-width: 600px) {
+
+@media only screen and (max-width: 480px) {
     .preview {
-        width: 65%;
-        left: 101px;
-        top: 122px;
-        height: initial;
+        width: 99%;
+        left: 0px;
+        height: 70%;
+        top:140px;
     }
 }
 
-@media (max-width: 600px) {
+@media only screen and (max-width: 480px) {
     .prev {
         top: 5px;
+        height: 30%;
     }
 }
 
 
 
-@media (max-width: 600px) {
+@media only screen and (max-width: 480px) {
 
     h2 {
-        font-size: 15px;
-        top: 2px;
+        font-size: 12px;
+        top: 3px;
         text-align: center;
     }
 }
 
-@media (max-width: 600px) {
+@media only screen and (max-width: 480px) {
 
     h1 {
-        font-size: small;
-
-        text-align: start;
-        top: 5px;
+        font-size: x-small;
+        text-align: initial;
+        top: 3px;
     }
 }
 
-@media (max-width: 600px) {
+@media only screen and (max-width: 480px) {
+
+    h5{
+        font-size: 12px
+    }
+}
+
+
+@media only screen and (max-width: 480px) {
 
     h6 {
-        top: 5px;
+        top: 0px;
         font-size: x-small;
         padding: 0;
         text-align: center;
     }
 }
 
-@media (max-width: 600px) {
+@media only screen and (max-width: 480px) {
     p {
-        font-size: small;
-        top: -12px;
+        font-size: x-small;
+        top: -4px;
     }
 }
 
 
-@media (max-width: 600px) {
+@media only screen and (max-width: 480px) {
     .aroow {
         top: 12px;
         height: 1px;
@@ -771,7 +736,7 @@ a {
     }
 }
 
-@media (max-width: 600px) {
+@media only screen and (max-width: 480px) {
     .icon-left {
         top: 0;
         width: 25px;
@@ -779,7 +744,7 @@ a {
     }
 }
 
-@media (max-width: 600px) {
+@media only screen and (max-width: 480px) {
     .value-like {
         left: 30px;
         top: 8px;
@@ -787,35 +752,36 @@ a {
     }
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 480px) {
     .right-block1 {
-        left: 2px;
-        top: 87%;
-        width: 48%;
-        height: 25%;
-    }
-}
-
-@media (max-width: 600px) {
-    .right-block2 {
-        top: 87%;
-        width: 48%;
+        left: 0px;
+        top: 100%;
+        width: 47%;
+        height: 41%;
         display: inline-block;
-        left: 191px;
-        height: 25%;
     }
 }
 
-@media (max-width: 600px) {
+@media  screen and (max-width: 480px) {
+    .right-block2 {
+        top: 100%;
+        width: 47%;
+        display: inline-block;
+        left: 158px;
+        height: 41%;
+    }
+}
+
+@media  screen and (max-width: 480px) {
     .right-block3 {
-        left: 95px;
-        height: 25%;
-        width: 48%;
-        top: 113%;
+        left: 0px;
+    height: 25%;
+    width: 100%;
+    top: 143%;
     }
 }
 
-@media (max-width: 600px) {
+@media only screen and (max-width: 480px) {
     .threeIcon {
 
         top: 5px;
@@ -823,10 +789,108 @@ a {
     }
 }
 
-@media (max-width: 600px) {
+@media only screen and (max-width: 480px) {
     .social_icon {
         top: -4px;
         height: 25px;
 
     }
+}
+
+@media only screen and (max-width: 480px) {
+    .left-block {
+        left: 0;
+        width: 100%;
+        top: 174%;
+    }
+}
+
+
+@media only screen and (max-width: 480px) {
+    .r-btn {
+        right: 17px;
+        top: 5px;
+    }
+}
+
+
+@media only screen and (max-width: 480px) {
+    .right-btn1 {
+        width: 50px;
+        font-size: 12px;
+    }
+}
+
+
+@media only screen and (max-width: 480px) {
+    .right-btn2 {
+        width: 50px;
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .comments-bt {
+        top: 2px;
+        left: 3px;
+    }
+}
+
+
+@media only screen and (max-width: 6480){
+    #comment {
+    top: 22px;
+        left: 30px;
+    }
+}
+
+
+@media only screen and (max-width: 480px) {
+    .price {
+        top: -12px;
+        left: 116px;
+    }
+}
+
+
+@media only screen and (max-width: 480px) {
+    #comment {
+        top: 19px;
+        border-radius: 30px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .reviews-list {
+        display: block;
+    height: 70%;
+    top: 45px;
+    }
+}
+
+
+@media only screen and (max-width: 480px) {
+    .review-item {
+        left: 0;
+    width: 82%;
+    height: 40%;
+    margin: 1px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .men {
+        height: 39%;
+    width: 18%;
+    left: -30px;
+}
+}
+
+@media only screen and (max-width: 480px) {
+    .reviews-author {
+    top: 0;
+    height: 50%;
+    right: 3px;
+    padding: 10px;
+}
 }
