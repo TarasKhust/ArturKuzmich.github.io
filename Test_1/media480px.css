@@ -1,0 +1,273 @@
+@media screen and (max-width: 480px) {
+    .back {
+        left: 0px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .btn-block {
+        width: 87%;
+        top: -38px;
+        left: 0px;
+    }
+}
+
+
+
+@media screen and (max-width: 480px) {
+    .preview {
+        width: 99%;
+        left: 0px;
+        height: 70%;
+        top: 186px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .prev {
+        top: 5px;
+        height: 30%;
+    }
+}
+
+
+
+@media screen and (max-width: 480px) {
+
+    h2 {
+        font-size: 12px;
+        top: 3px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    h1 {
+        font-size: x-small;
+        text-align: initial;
+        top: 3px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    h5 {
+        font-size: 12px
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+
+    h6 {
+        top: 0px;
+        font-size: x-small;
+        padding: 0;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    p {
+        font-size: x-small;
+        top: -4px;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .aroow {
+        top: 12px;
+        height: 1px;
+        border-bottom: 2px solid grey;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .icon-left {
+        top: 0;
+        width: 25px;
+        left: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .value-like {
+        left: 30px;
+        top: 8px;
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .right-block1 {
+        top: 104%;
+        width: 47%;
+        height: 41%;
+        left: 51%;
+        display: inline-block;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .right-block2 {
+        top: 104%;
+        width: 47%;
+        display: inline-block;
+        left: 5px;
+        height: 41%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .right-block3 {
+        left: 0px;
+        height: 25%;
+        width: 99%;
+        top: 147%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .threeIcon {
+
+        top: 5px;
+
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .social_icon {
+        top: -4px;
+        height: 25px;
+
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .left-block {
+        left: 0;
+        width: 100%;
+        top: 174%;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .r-btn {
+        right: 17px;
+        top: 5px;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .right-btn1 {
+        width: 50px;
+        font-size: 12px;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .right-btn2 {
+        width: 50px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .comments-bt {
+        top: 2px;
+        left: 3px;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    #comment {
+        top: 22px;
+        left: 30px;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .price {
+        top: -12px;
+        left: 116px;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    #comment {
+        top: 19px;
+        border-radius: 30px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .reviews-list {
+        display: block;
+        height: 70%;
+        top: 45px;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .review-item {
+        left: 0;
+        width: 82%;
+        height: 40%;
+        margin: 1px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .men {
+        height: 39%;
+        width: 18%;
+        left: -30px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .reviews-author {
+        top: 0;
+        height: 50%;
+        right: 3px;
+        padding: 10px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .show__wrapper {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .show__wrapper {
+        display: flex;
+    }
+}
+
+
+
+@media screen and (max-width: 480px) {
+    .btn-play {
+        left: 82px;
+        top: 5px;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .btn_play {
+        width: 50px;
+        top: 0px;
+    }
+}
