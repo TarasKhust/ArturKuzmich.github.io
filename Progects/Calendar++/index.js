@@ -125,11 +125,25 @@ document
   .querySelector('.calendar')
   .addEventListener('contextmenu', e => {
     e.preventDefault();
+    const context = document.querySelector('.context');
+    const target = e.target.closest('.calendar__cell');
+    if(!target) {
+      context.style.display = 'none';
+      return;
+    }
+
+    const date = target.dataset.date;
+    if(!date){
+      context.style.display = 'none';
+     return;
+    }
+
+
 
 
     const x = e.pageX;
     const y = e.pageY;
-    const context = document.querySelector('.context');
+    
 
     
       context.style.display = 'block';
@@ -198,7 +212,7 @@ document
                         this.weeksList.map(row => `
                             <tr class="calendar__row">
                                 ${row.map(char =>
-                                  `<td class="calendar__cell">
+                                  `<td class="calendar__cell" data-date="${char}">
                                           <div class="calendar__cell-inner">
                                               <span class="calendar__date">
                                                 ${char}
