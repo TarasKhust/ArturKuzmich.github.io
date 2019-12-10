@@ -1,0 +1,52 @@
+
+@media screen and (min-width: 1024px) {
+    .show__wrapper {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .show__wrapper {
+        display: none;
+        
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .wrapper {
+        display: inline-block;
+        right: 140px;
+        
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .btn {
+        top: -7px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    a {
+        top: 40px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .btn-play {
+        right: 0;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .btn_info {
+        right: 20px;
+    }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .avatar {
+        display: none;
+    }
+}

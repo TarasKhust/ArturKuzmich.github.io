@@ -1,0 +1,144 @@
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    .wrapper {
+        display: none;
+    }
+}
+
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    .avatar-player {
+        left: 160%;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    .btn_info {
+        left: 160%;
+        top: 2px;
+    }
+}
+
+@media screen and(min-width: 481px) and (max-width: 767px){
+
+    .cup,
+    .bell {
+        left: 160%;
+
+    }
+}
+
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    .btn-play {
+        left: 25%;
+        top: 1px;
+
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px)  {
+    .btn-block {
+        width: 87%;
+        top: -38px;
+        left: 0px;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    .preview {
+        width: 53%;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    .aroow {
+        top: 97px;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    .icon-left {
+        top: 83px;
+        width: 25px;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    .value-like {
+        left: 32px;
+        top: 8px;
+        font-size: 15px;
+    }
+}
+
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    .social_icon {
+        top: 77px;
+        max-width: 31px;
+        max-height: 30px;
+        display: block;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    .right-block1 {
+        top: 35%;
+
+    }
+
+    .right-block2 {
+        top: 77%;
+    }
+
+    .right-block3 {
+        top: 120%;
+    }
+}
+
+
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    .r-btn {
+        top: 16px;
+        right: 35px;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    .comments-bt {
+        top: 5px;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px){
+    #comment {
+        top: 25px;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px){
+    .reviews-list {
+        top: 29px;
+        right: 18px;
+    }
+
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    .men {
+        right: 30px;
+        width: 23%;
+        height: 50%;
+        top: 32px;
+    }
+
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    .reviews-author {
+        top: 25px;
+        text-decoration: solid;
+    }
+
+}
