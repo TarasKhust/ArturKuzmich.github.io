@@ -1,0 +1,64 @@
+
+  
+  
+ 
+
+
+
+
+
+
+
+
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 15px;
+  height: 400px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 2px 0 grey;
+  overflow: auto;
+  
+  
+}
+
+::-webkit-scrollbar { width: 3px; height: 3px;}
+::-webkit-scrollbar-button {  background-color: rgb(245, 241, 241); }
+::-webkit-scrollbar-track {  background-color: rgb(0, 0, 0);}
+::-webkit-scrollbar-track-piece { background-color: #ccbaba;}
+::-webkit-scrollbar-thumb { height: 50px; background-color:rgb(189, 189, 218); border-radius: 3px;}
+::-webkit-scrollbar-corner { background-color: rgb(145, 54, 54);}
+::-webkit-resizer { background-color: rgb(77, 41, 41);}
+
+.column > img {
+  height: 400px;
+    width: 300px;
+    background-size: cover;
+    background-position: center;
+    transition: all ease .5s;
+}
+
+.column:hover img {
+  height: 200px;
+}
+
+
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+
+@media screen and (max-width:600px) {
+  .column {
+    width: 100%;
+  }
+}
+
+
+
+

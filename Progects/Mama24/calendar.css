@@ -1,0 +1,77 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0%;
+  margin: 0%;
+  font-family: "Mansalva", cursive;
+}
+
+body {
+  background: #f1f1f1;
+}
+
+.card {
+  background-color: antiquewhite;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.card > p {
+  text-align: center;
+  font-size: 30px;
+}
+
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  height: 200px;
+  padding: 20px;
+}
+
+.fakeimg > a > img {
+  width: 390px;
+  height: 160px;
+}
+
+.row > p {
+  text-align: center;
+  color: #30e2a7;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.footer {
+  background: whitesmoke;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 58px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
+
+.header {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100px;
+  top: 0;
+  background: #f3f7f8;
+}
+
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {
+    width: 100%;
+    padding: 0;
+  }
+}
+/*# sourceMappingURL=calendar.css.map */
