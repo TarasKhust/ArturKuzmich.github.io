@@ -41,7 +41,7 @@ html {
   height: 32px;
   width: 22px;
   scroll-behavior: smooth;
-  background-image: url(../images/mouse32.png);
+  background-image: url(./Progects/First_Portfolio/imgPortfolio/mouse32.png);
   background-position: center;
   animation-name: bounceInDown;
   -webkit-animation-name: bounceInDown;
@@ -319,6 +319,7 @@ h3 {
 .isotopewrap .work-item {
   margin: 0;
   width: 57%;
+  border-radius: 70px;
 }
 
 .work-item {
@@ -564,3 +565,21 @@ a:hover {
   transition: all ease .5s;
 }
 /*# sourceMappingURL=index.css.map */
+
+
+/* Preloader */
+
+.preloader{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: 2;
+  transition: 1s all;
+  opacity: 1;
+  visibility: visible;
+  background: url(../Progects/First_Portfolio/imgPortfolio/percent.jpg);
+  background-color:#110f11 ;
+}

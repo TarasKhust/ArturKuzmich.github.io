@@ -43,7 +43,7 @@ html {
     height: 32px;
     width: 22px;
     scroll-behavior: smooth;
-    background-image: url(../images/mouse32.png);
+    background-image: url(./Progects/First_Portfolio/imgPortfolio/mouse32.png);
     background-position: center;
     animation-name: bounceInDown;
     -webkit-animation-name: bounceInDown;
@@ -320,6 +320,7 @@ h3 {
 .isotopewrap .work-item {
     margin: 0;
     width: 57%;
+    border-radius: 70px;
 }
 
 .work-item {
@@ -558,3 +559,5 @@ only screen and (max-device-width: 767px) {
     transition: all ease .5s;
   }
   
+
+//   Preloader+
