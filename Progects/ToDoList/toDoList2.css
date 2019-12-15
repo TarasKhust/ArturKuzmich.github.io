@@ -1,0 +1,140 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-image: url(./imgToDoList/kiev.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+
+}
+
+h1{
+    color: yellow;
+    margin: 30px 0px;
+    margin-top: 10%;
+    font-weight: bold;
+}
+.wrapper {width: 920px; margin: 0 auto}
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul li {
+    margin-top: 20px;
+    border: none;
+    width: 75%;
+    float: left;
+    padding: 5px;
+    border-radius: 5px;
+    min-width: 45%;
+    background: yellow;
+    height: 50px;
+    font-size: 20p;
+    padding-left: 25px;
+    font-family: sans-serif;
+}
+
+ul li:nth-child(odd) {
+    margin-top: 20px;
+    border: none;
+    width: 75%;
+    float: left;
+    padding: 5px;
+    border-radius: 5px;
+    min-width: 45%;
+    background: yellow;
+    height: 50px;
+    font-size: 20p;
+    padding-left: 25px;
+    font-family: sans-serif;
+}
+
+ul li:hover {
+    background: #ddd;
+}
+
+ul li.checked {
+    background: #888;
+    color: black;
+    text-decoration: line-through;
+}
+ul li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: red;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+}
+.close {
+    position: inherit;
+    right: 0;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+    background: unset;
+    float: right;
+}
+
+.close:hover {
+    background-color: black;
+    color: white;
+}
+
+.header {
+    background-color: #000;
+    padding: 30px 40px;
+    color: white;
+    text-align: center;
+}
+
+.header:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+input {
+    border: none;
+    width: 75%;
+    padding: 10px;
+    float: left;
+    padding: 5px;
+    border-radius: 5px;
+    min-width: 45%;
+    background: white;
+    height: 50px;
+    font-size: 20p;
+    padding-left: 25px;
+    font-family: sans-serif;
+}
+
+.addBtn {
+    width: 25%;
+    background: #d9d9d9;
+    float: left;
+    text-align: center;
+     padding: 12px 12px;
+    color: black;
+    font-size: 20px;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: yellow;
+    transition: all 0.6s ease;
+    -webkit-transition: all 0.6s ease;
+    -moz-transition: all 0.6s ease;
+    -ms-transition: all 0.6s ease;
+    -o-transition: all 0.6s ease;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: sans-serif;
+}
+
+.addBtn:hover {
+    background-color: #bbb;
+}
