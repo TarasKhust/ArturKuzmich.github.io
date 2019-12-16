@@ -585,4 +585,104 @@ only screen and (max-device-width: 767px) {
   }
 }
 
-/* Preloader */
+
+
+/* // Skills bar */
+
+h1 {
+  margin-top: 70px;
+  font-family: fantasy;
+  box-shadow: 0 0 20px #060681;
+  margin-left: 30%;
+  margin-right: 30%;
+  text-align: center;
+  color: white;
+}
+
+
+.sbar {
+  width: 550px;
+  margin: -30px auto;
+  padding: 20px;
+}
+
+li {
+  position: relative;
+  list-style: square;
+  margin: 50px;
+  font-weight: bold;
+  color: white;
+}
+
+li:before {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 10px);
+  height: 12px;
+  width: 100%;
+  background: black;
+  border-radius: 8px;
+  content: "";
+  box-shadow: 0 0 10px #fff;
+
+}
+
+li:after {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 10px);
+  height: 12px;
+  width: 0;
+  background: deepskyblue;
+  border-radius: 8px;
+  content: "";
+  box-shadow: 0 0 10px #fff;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  animation-name: c;
+}
+
+li .h:after {
+  animation-name: h;
+}
+
+
+@keyframes h {
+  to {
+    width: 89%;
+  }
+}
+
+li .c:after {
+  animation-name: c;
+}
+
+
+@keyframes c {
+  to {
+    width: 89%;
+  }
+}
+
+li .cc:after {
+  animation-name: cc;
+}
+
+
+@keyframes cc {
+  to {
+    width: 89%;
+  }
+}
+
+li .js:after {
+  animation-name: js;
+}
+
+
+@keyframes js {
+  to {
+    width: 50%;
+  }
+}

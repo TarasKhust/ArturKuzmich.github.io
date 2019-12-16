@@ -249,7 +249,7 @@ h3 {
 
 }
 
-.about__img3{
+.about__img3 {
     display: block;
     width: 15%;
     height: 50%;
@@ -470,8 +470,8 @@ only screen and (max-device-width: 767px) {
     .header {
         margin: 0px auto;
         padding: 35px;
-        }
     }
+}
 
 
 
@@ -495,17 +495,17 @@ only screen and (max-device-width: 767px) {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     width: 40px;
     height: 40px;
     cursor: pointer;
-  }
-  
-  .show__header .show__row {
+}
+
+.show__header .show__row {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -514,64 +514,164 @@ only screen and (max-device-width: 767px) {
     background: #4e75f6;
     border-radius: 50px;
     overflow: hidden;
-  }
-  
-  .show__header .show__row .show__inner {
+}
+
+.show__header .show__row .show__inner {
     width: 0px;
     background: white;
     -webkit-transition: all ease .3s;
     transition: all ease .3s;
-  }
-  
-  .show__header .show__row:nth-child(3n + 1) .show__inner {
+}
+
+.show__header .show__row:nth-child(3n + 1) .show__inner {
     -webkit-transition-delay: 0s;
-            transition-delay: 0s;
-  }
-  
-  .show__header .show__row:nth-child(3n + 2) .show__inner {
+    transition-delay: 0s;
+}
+
+.show__header .show__row:nth-child(3n + 2) .show__inner {
     -webkit-transition-delay: .10s;
-            transition-delay: .10s;
-  }
-  
-  .show__header .show__row:nth-child(3n + 3) .show__inner {
+    transition-delay: .10s;
+}
+
+.show__header .show__row:nth-child(3n + 3) .show__inner {
     -webkit-transition-delay: .20s;
-            transition-delay: .20s;
-  }
-  
-  .show__header:hover .show__inner {
+    transition-delay: .20s;
+}
+
+.show__header:hover .show__inner {
     width: 100%;
-  }
-  
-  #show__header {
+}
+
+#show__header {
     display: none;
     border-radius: 50px;
-  }
-  
-  #show__header:checked + .header {
+}
+
+#show__header:checked+.header {
     left: 0;
     top: 0;
     opacity: 1;
-  }
-  
-  #show__header:checked + .header .active {
+}
+
+#show__header:checked+.header .active {
     opacity: 1;
     -webkit-transition: all ease .5s;
     transition: all ease .5s;
-  }
-  
-
-
-  @media (max-width: 599px) {
-     .isotopewrap {
-    width: 49.9%;
 }
-  }
+
+
+
+@media (max-width: 599px) {
+    .isotopewrap {
+        width: 49.9%;
+    }
+}
+
 //   Preloader+
 
-@media (max-width: 599px){
+@media (max-width: 599px) {
     .work-item {
         margin: 1%;
         width: 48%;
         left: 60%;
     }
+}
+
+
+// Skills bar
+
+h1 {
+    margin-top: 70px;
+    font-family: fantasy;
+    box-shadow: 0 0 20px #060681;
+    margin-left: 30%;
+    margin-right: 30%;
+    text-align: center;
+    color: white;
+}
+
+.sbar {
+    width: 550px;
+    margin: -30px auto;
+    padding: 20px;
+
+
+    & li {
+        position: relative;
+        list-style: square;
+        margin: 50px;
+        font-weight: bold;
+        color: white;
+
+        & li:before {
+            position: absolute;
+            left: 0;
+            top: calc(100% + 10px);
+            height: 12px;
+            width: 100%;
+            background: #4e75f6;
+            border-radius: 8px;
+            content: "";
+            box-shadow: 0 0 10px #fff;
+        }
     }
+}
+
+li:after {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 10px);
+    height: 12px;
+    width: 0;
+    background: deepskyblue;
+    border-radius: 8px;
+    content: "";
+    box-shadow: 0 0 10px #fff;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+}
+
+li .h:after {
+    animation-name: h;
+}
+
+
+@keyframes h {
+    to {
+        width: 89%;
+    }
+}
+
+li .c:after {
+    animation-name: c;
+}
+
+
+@keyframes c {
+    to {
+        width: 89%;
+    }
+}
+
+li .cc:after {
+    animation-name: cc;
+}
+
+
+@keyframes cc {
+    to {
+        width: 89%;
+    }
+}
+
+li .js:after {
+    animation-name: js;
+}
+
+
+@keyframes js {
+    to {
+        width: 50%;
+    }
+}
