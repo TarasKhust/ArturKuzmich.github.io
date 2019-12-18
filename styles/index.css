@@ -325,7 +325,7 @@ h3 {
 .work-item {
   background: gray none repeat scroll 0 0;
   display: block;
-  float: left;
+  float: right;
   overflow: hidden;
   position: relative;
   width: 23%;
@@ -614,7 +614,7 @@ li {
   color: white;
 }
 
-li:before {
+li::before {
   position: absolute;
   left: 0;
   top: calc(100% + 10px);
@@ -627,23 +627,23 @@ li:before {
 
 }
 
-li:after {
+li::after {
   position: absolute;
   left: 0;
   top: calc(100% + 10px);
   height: 12px;
   width: 0;
-  background: deepskyblue;
+  background: #4e75f6;
   border-radius: 8px;
   content: "";
   box-shadow: 0 0 10px #fff;
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
   animation-timing-function: ease;
-  animation-name: c;
+
 }
 
-li .h:after {
+.h::after {
   animation-name: h;
 }
 
@@ -654,7 +654,7 @@ li .h:after {
   }
 }
 
-li .c:after {
+.c::after {
   animation-name: c;
 }
 
@@ -665,18 +665,8 @@ li .c:after {
   }
 }
 
-li .cc:after {
-  animation-name: cc;
-}
 
-
-@keyframes cc {
-  to {
-    width: 89%;
-  }
-}
-
-li .js:after {
+.js::after {
   animation-name: js;
 }
 
@@ -685,4 +675,52 @@ li .js:after {
   to {
     width: 50%;
   }
+}
+
+.title{
+  width: 21ch;
+  font-family: monospace;
+  color: white;
+  font-size: 40px;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 4px orange;
+  animation: flashing-border 0.75s step-end infinite, 
+  printed-text 5s steps(21);
+}
+
+.titl{
+  width: 23ch;
+  font-family: monospace;
+  color: #4e75f6;
+  font-size: 40px;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 4px orange;
+  animation: flashing-border 0.75s step-end infinite, 
+  printed-text 5s steps(21);
+}
+
+@keyframes flashing-border {
+  0% {
+      border-color: orange;
+  }
+  50%{
+      border-color: transparent;
+  }
+  100% {
+      border-color: orange;
+  }
+}
+
+@keyframes printed-text{
+  from {
+      width: 0;
+  }
+}
+
+.Im_Block{
+  display: flex;
+  justify-content: center;
+  color: #4e75f6;
 }

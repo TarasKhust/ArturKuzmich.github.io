@@ -326,7 +326,7 @@ h3 {
 .work-item {
     background: gray none repeat scroll 0 0;
     display: block;
-    float: left;
+    float: right;
     overflow: hidden;
     position: relative;
     width: 23%;
@@ -603,7 +603,7 @@ h1 {
         font-weight: bold;
         color: white;
 
-        & li:before {
+        & li::before {
             position: absolute;
             left: 0;
             top: calc(100% + 10px);
@@ -617,13 +617,13 @@ h1 {
     }
 }
 
-li:after {
+li::after {
     position: absolute;
     left: 0;
     top: calc(100% + 10px);
     height: 12px;
     width: 0;
-    background: deepskyblue;
+    background: #4e75f6;
     border-radius: 8px;
     content: "";
     box-shadow: 0 0 10px #fff;
@@ -632,40 +632,30 @@ li:after {
     animation-timing-function: ease;
 }
 
-li .h:after {
+.h::after {
     animation-name: h;
 }
 
 
 @keyframes h {
     to {
-        width: 89%;
+        width: 90%;
     }
 }
 
-li .c:after {
+.c::after {
     animation-name: c;
 }
 
 
 @keyframes c {
     to {
-        width: 89%;
+        width: 90%;
     }
 }
 
-li .cc:after {
-    animation-name: cc;
-}
 
-
-@keyframes cc {
-    to {
-        width: 89%;
-    }
-}
-
-li .js:after {
+.js::after {
     animation-name: js;
 }
 
@@ -674,4 +664,55 @@ li .js:after {
     to {
         width: 50%;
     }
+}
+
+
+.title {
+    width: 21ch;
+    font-family: monospace;
+    color: white;
+    font-size: 40px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 4px orange;
+    animation: flashing-border 0.75s step-end infinite,
+        printed-text 5s steps(21);
+}
+
+.titl {
+    color: #4e75f6;
+    width: 23ch;
+    font-family: monospace;
+    font-size: 40px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 4px orange;
+    animation: flashing-border 0.75s step-end infinite,
+        printed-text 5s steps(21);
+}
+
+@keyframes flashing-border {
+    0% {
+        border-color: orange;
+    }
+
+    50% {
+        border-color: transparent;
+    }
+
+    100% {
+        border-color: orange;
+    }
+}
+
+@keyframes printed-text {
+    from {
+        width: 0;
+    }
+}
+
+.Im_Block {
+    display: flex;
+    justify-content: center;
+    color: #4e75f6;
 }
