@@ -682,11 +682,11 @@ li::after {
 .titl {
     color: #4e75f6;
     width: 23ch;
+    margin-top: 14%;
     font-family: monospace;
     font-size: 40px;
     white-space: nowrap;
     overflow: hidden;
-    border-right: 4px orange;
     animation: flashing-border 0.75s step-end infinite,
         printed-text 5s steps(21);
 }
@@ -716,3 +716,7 @@ li::after {
     justify-content: center;
     color: #4e75f6;
 }
+
+
+
+

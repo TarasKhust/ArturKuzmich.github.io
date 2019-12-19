@@ -691,12 +691,12 @@ li::after {
 
 .titl{
   width: 23ch;
+  margin-top: 14%;
   font-family: monospace;
   color: #4e75f6;
   font-size: 40px;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 4px orange;
   animation: flashing-border 0.75s step-end infinite, 
   printed-text 5s steps(21);
 }
@@ -723,4 +723,76 @@ li::after {
   display: flex;
   justify-content: center;
   color: #4e75f6;
+}
+
+
+@media screen and (max-width: 991px) {
+  .background-image{
+       width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .background-image{
+       width: 475px;
+  }
+}
+
+
+@media screen and (max-width: 991px) {
+  .navigation{
+    width: 65%;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .navigation>ul{
+    width: 100%;
+    display: block;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .active{
+    margin-left: 0px;
+    margin-top: 0;
+    float: left;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .active{
+    float: none;
+    width: 24%;
+    margin-left: 118px;
+    margin-top: -19px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .Im_Block{
+    width: 62%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .Im_Block{
+    width: 90%;
+  }
+}
+
+
+
+@media screen and (max-width: 991px) {
+  .titl{
+    
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .titl{
+    font-size: 20px;
+    margin-top: 50%;
+  }
 }
