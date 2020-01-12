@@ -7,15 +7,31 @@
 
 
 .calendar__cell {
-    width: 100px;
-    min-width: 100px;
-    height: 100px;
+    position: relative;
+    width: 150px;
+    min-width: 150px;
+    height: 150px;
     background: pink;
 }
 
 .calendar__cell-inner {
-    width: 100px;
-    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 150px;
+    transition: all ease .5s;
+    
+}
+
+.calendar__cell-inner--open{
+    z-index: 1;
+    box-sizing: border-box;
+    top: -50%;
+    left: -50%;
+    width: 300px;
+    height: 300px;
+    box-shadow: 0 0 5px 0 gray;
 }
 
 .calendar__date {
@@ -23,6 +39,66 @@
     padding: 2px 6px;
     font-size: 25px;
     font-weight: bold;
+}
+
+.event {
+    width: 100%;
+    display: flex;
+}
+
+.event__priority {
+    min-width: 20px;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+
+.event__priority--1 {
+    background: green;
+}
+
+.event__priority--2 {
+    background: yellow;
+}
+
+.event__priority--3 {
+    background: purple;
+}
+
+.event__priority--4 {
+    background: orange;
+}
+
+.event__priority--5 {
+    background: blue;
+}
+
+.event__priority--6 {
+    background: floralwhite;
+}
+
+.event__priority--7 {
+    background: coral;
+}
+
+.event__priority--8 {
+    background: grey;
+}
+
+.event__priority--9 {
+    background: red;
+}
+
+.event__priority--10 {
+    background: black;
+}
+
+.event__message {
+    flex-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
 }
 
 .context {
@@ -48,7 +124,7 @@
     background: #ffecf0;
 }
 
-.modal{
+.modal {
     width: 320px;
     max-width: 320px;
     position: absolute;
@@ -61,17 +137,17 @@
     box-shadow: 1px 1px 5px -3px;
 }
 
-.modal__top{
+.modal__top {
     display: flex;
     justify-content: flex-end;
     padding: 5px 0;
 }
 
-.modal__close{
+.modal__close {
     cursor: pointer;
 }
 
-.modal__field{
+.modal__field {
     margin-bottom: 10px;
     display: flex;
     flex-wrap: wrap;
@@ -91,7 +167,7 @@
 
 }
 
-.modal__btn-wrapper{
+.modal__btn-wrapper {
     display: flex;
     justify-content: space-between;
 
@@ -109,22 +185,15 @@
     font-weight: bold;
 }
 
-.modal__btn--red{
-background: red;
+.modal__btn--red {
+    background: red;
 }
-.modal__btn--green{
+
+.modal__btn--green {
     background: green;
 
 }
 
-.calendar__events{
-    border: double;
-    background: blanchedalmond;
-    font-size: small;
-    color: black;
-    padding: 11px;
-    margin: 2px;
-}
 
 
 
@@ -132,7 +201,7 @@ background: red;
 
 /* Clock+++ */
 
-#clock{
+#clock {
     font-weight: 300;
     font-size: 100px;
     width: 50%;

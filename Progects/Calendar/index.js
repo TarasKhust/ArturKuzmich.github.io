@@ -1,282 +1,310 @@
 class Calendar {
-  calendarWrapper = null;
-  months = [
-      'january',
-      'fabruary',
-      'martch',
-      'april',
-      'may',
-      'june',
-      'july',
-      'august',
-      'september',
-      'october',
-      'november',
-      'december'
-  ];   
-  days = [
-      'sunday',
-      'mondey',
-      'tuesday',
-      'wednesday',
-      'thirsday',
-      'friday',
-      'saturday'
-  ];
-  currentDate = null;
-  currentMonthName = null;
-  monthField = null;
-  events = {};
-  selectedDate = null;
+    calendarWrapper = null;
+    months = [
+        'january',
+        'fabruary',
+        'martch',
+        'april',
+        'may',
+        'june',
+        'july',
+        'august',
+        'september',
+        'october',
+        'november',
+        'december'
+    ];
+    days = [
+        'sunday',
+        'mondey',
+        'tuesday',
+        'wednesday',
+        'thirsday',
+        'friday',
+        'saturday'
+    ];
+    currentDate = null;
+    currentMonthName = null;
+    monthField = null;
+    events = {};
+    selectedDate = null;
 
-  constructor(selector) {
-      this.calendarWrapper = document.querySelector(selector);
-      const date = sessionStorage.date;
-      if (date) { 
-          this.currentDate = new Date(date);
-      }
-      else {
-          this.currentDate = new Date();
-      }
-      this.currentMonthName = this.months[this.currentMonth];
+    constructor(selector) {
+        this.calendarWrapper = document.querySelector(selector);
+        const date = sessionStorage.date;
+        if (date) {
+            this.currentDate = new Date(date);
+        } else {
+            this.currentDate = new Date();
+        }
+        this.currentMonthName = this.months[this.currentMonth];
 
-      this.parseEvents();
-      this.initWrappers();
-      this.renderHandlers();
-      this.renderContext();
-      this.initModalHandlers();
-      this.render();
-  }
+        this.parseEvents();
+        this.initWrappers();
+        this.renderHandlers();
+        this.renderContext();
+        this.initModalHandlers();
+        this.render();
+    }
 
-  get currentMonth() {
-      return this.currentDate.getMonth();
-  }
+    get currentMonth() {
+        return this.currentDate.getMonth();
+    }
 
-  set currentMonth(monthNumber) {
-      this.currentDate.setMonth(monthNumber);
-      this.monthField.value = this.months[monthNumber];
-      this.render();
-  }
+    set currentMonth(monthNumber) {
+        this.currentDate.setMonth(monthNumber);
+        this.monthField.value = this.months[monthNumber];
+        this.render();
+    }
 
-  get daysCount() {
-      const date = new Date(this.currentDate)
-      date.setMonth(this.currentMonth + 1);
-      date.setDate(0);
-      return date.getDate();
-  }
+    get daysCount() {
+        const date = new Date(this.currentDate)
+        date.setMonth(this.currentMonth + 1);
+        date.setDate(0);
+        return date.getDate();
+    }
 
-  get weekDay() {
-      const date = new Date(this.currentDate)
-      date.setDate(1);
-      return date.getDay();
-  }
+    get weekDay() {
+        const date = new Date(this.currentDate)
+        date.setDate(1);
+        return date.getDay();
+    }
 
-  get weeksList() {
-      const daysList = []
+    get weeksList() {
+        const daysList = []
 
-      for(let i = -this.weekDay + 1; i <= this.daysCount; i++) {
-          if (i <= 0) {
-              daysList.push('');
-          }
-          else {
-              daysList.push(i);
-          }
-      }
+        for (let i = -this.weekDay + 1; i <= this.daysCount; i++) {
+            if (i <= 0) {
+                daysList.push('');
+            } else {
+                daysList.push(i);
+            }
+        }
 
-      const weeksList = [
-      ];
+        const weeksList = [];
 
-      for(let i = 0; i < daysList.length; i++) {
-          const arr = weeksList[weeksList.length - 1];
-          if (arr && arr.length < 7) {
-              arr.push(daysList[i]);
-          }
-          else {
-              weeksList.push([
-                  daysList[i]
-              ])
-          }
-      }
+        for (let i = 0; i < daysList.length; i++) {
+            const arr = weeksList[weeksList.length - 1];
+            if (arr && arr.length < 7) {
+                arr.push(daysList[i]);
+            } else {
+                weeksList.push([
+                    daysList[i]
+                ])
+            }
+        }
 
-      return weeksList;
-  }
+        return weeksList;
+    }
 
-  initModalHandlers() {
-      const close = document.querySelector('.modal__close');
-      const cancel = document.querySelector('#close-modal');
-      const form = document.forms['add-event-modal'];
+    initModalHandlers() {
+        const close = document.querySelector('.modal__close');
+        const cancel = document.querySelector('#close-modal');
+        const form = document.forms['add-event-modal'];
 
-      close.addEventListener('click', this.closeModal.bind(this))
-      cancel.addEventListener('click', this.closeModal.bind(this))
-      form.addEventListener('submit', this.addNewEvent.bind(this))
-  }
+        close.addEventListener('click', this.closeModal.bind(this))
+        cancel.addEventListener('click', this.closeModal.bind(this))
+        form.addEventListener('submit', this.addNewEvent.bind(this))
+    }
 
-  initWrappers() {
-      const html = `
+    initWrappers() {
+        const html = `
           <div class="handler-wrapper"></div>
           <div class="calendar-wrapper"></div>
           <div class="context-wrapper"></div>
       `;
-      this.calendarWrapper.innerHTML = html;
-  }
+        this.calendarWrapper.innerHTML = html;
+    }
 
-  renderContext() {
-      const contextWrapper = document.querySelector('.context-wrapper');
+    renderContext() {
+        const contextWrapper = document.querySelector('.context-wrapper');
 
-      const context = document.createElement('div');
-      context.classList.add('context');
+        const context = document.createElement('div');
+        context.classList.add('context');
 
-      const addItem = document.createElement('div');
-      addItem.classList.add('context__item');
-      addItem.id = 'add';
-      addItem.innerText = 'Add';
-      addItem.addEventListener('click', this.showModal.bind(this));
+        const addItem = document.createElement('div');
+        addItem.classList.add('context__item');
+        addItem.id = 'add';
+        addItem.innerText = 'Add';
+        addItem.addEventListener('click', this.showModal.bind(this));
 
-      context.appendChild(addItem);
+        context.appendChild(addItem);
 
-      contextWrapper.appendChild(context);
-  }
+        contextWrapper.appendChild(context);
+    }
 
-  showModal() {
-      const modal = document.querySelector('.modal');
-      modal.style.display = 'block';
+    showModal() {
+        const modal = document.querySelector('.modal');
+        modal.style.display = 'block';
 
-      const context = document.querySelector('.context');
-      context.style.display = 'none';
-  }
+        const context = document.querySelector('.context');
+        context.style.display = 'none';
+    }
 
-  closeModal() {
-      const modal = document.querySelector('.modal');
-      modal.style.display = 'none';
-  }
+    closeModal() {
+        const modal = document.querySelector('.modal');
+        modal.style.display = 'none';
+    }
 
-  addNewEvent(event) {
-      event.preventDefault();
-      const form = event.target;
+    addNewEvent(event) {
+        event.preventDefault();
+        const form = event.target;
 
-      const message = form.elements.message.value;
-      const time = form.elements.time.value;
-      const priority = form.elements.priority.value;
+        const message = form.elements.message.value;
+        const time = form.elements.time.value;
+        const priority = form.elements.priority.value;
 
-      const day = this.selectedDate;
-      const month = this.currentDate.getMonth();
-      const year = this.currentDate.getFullYear();
-      const key = `${day}-${month}-${year}`;
+        const day = this.selectedDate;
+        const month = this.currentDate.getMonth();
+        const year = this.currentDate.getFullYear();
+        const key = `${day}-${month}-${year}`;
 
-      if (this.events[key]) {
-          this.events[key].events.push({message, time, priority});
-      }
-      else {
-          this.events[key] = {
-              'events': [
-                  {message, time, priority}
-              ]
-          }
-      }
+        if (this.events[key]) {
+            this.events[key].events.push({
+                message,
+                time,
+                priority
+            });
+        } else {
+            this.events[key] = {
+                'events': [{
+                    message,
+                    time,
+                    priority
+                }]
+            }
+        }
 
-      localStorage.calendar = JSON.stringify(this.events);
+        localStorage.calendar = JSON.stringify(this.events);
 
-      this.closeModal();
-      this.render();
-  }
+        this.closeModal();
+        this.render();
+    }
 
-  parseEvents() {
-      try {
-          this.events = JSON.parse(localStorage.calendar);
-      }
-      catch(e) {
-          this.events = {}
-      }
-  }
+    parseEvents() {
+        try {
+            this.events = JSON.parse(localStorage.calendar);
+        } catch (e) {
+            this.events = {}
+        }
+    }
 
-  initContextEvents() {
-      document
-          .querySelector('.calendar')
-          .addEventListener('contextmenu', e => {
-              e.preventDefault();
-              const context = document.querySelector('.context');
-              const target = e.target.closest('.calendar__cell');
-              if (!target) {
-                  context.style.display = 'none';
-                  return;
-              }
+    initContextEvents() {
+        document
+            .querySelector('.calendar')
+            .addEventListener('contextmenu', e => {
+                e.preventDefault();
+                const context = document.querySelector('.context');
+                const target = e.target.closest('.calendar__cell');
+                if (!target) {
+                    context.style.display = 'none';
+                    return;
+                }
 
-              const date = target.dataset.date;
-              if (!date) {
-                  context.style.display = 'none';
-                  return;
-              }
-              
-              this.selectedDate = date;
+                const date = target.dataset.date;
+                if (!date) {
+                    context.style.display = 'none';
+                    return;
+                }
 
-              const x = e.pageX;
-              const y = e.pageY;
+                this.selectedDate = date;
 
-              context.style.display = 'block';
-              context.style.top = y + 'px';
-              context.style.left = x + 'px';
-          });
-  }
+                const x = e.pageX;
+                const y = e.pageY;
 
-  renderHandlers() {
-      // button to move to the previous month   
-      const prev = document.createElement('button');
-      prev.innerText = 'Prev';
-      prev.addEventListener('click', () => {
-          let cm = this.currentMonth - 1;
-          if (cm < 0) cm = 12;
-          this.currentMonth = cm;
-      });
+                context.style.display = 'block';
+                context.style.top = y + 'px';
+                context.style.left = x + 'px';
+            });
+    }
 
-      this.calendarWrapper
-          .querySelector('.handler-wrapper')
-          .appendChild(prev);
+    initEventsModal(){
+        document
+            .querySelector('.calendar')
+            .addEventListener('click', e =>{
 
-      // field to display current month
-      this.monthField = document.createElement('input');
-      const currentMonth = this.months[this.currentMonth];
-      this.monthField.value = currentMonth;
-      this.calendarWrapper
-          .querySelector('.handler-wrapper')
-          .appendChild(this.monthField);
+                const eventsDate = e.target.dataset.events;
 
-      // button to move to the next month
-      const next = document.createElement('button');
-      next.innerText = 'Next';
-      next.addEventListener('click', () => {
-          let cm = this.currentMonth + 1;
-          if (cm > 11) cm = 0;
-          this.currentMonth = cm;
-      });
+                const cell = e.target.closest('.calendar__cell-inner');
+                if(cell) {
+                    cell.classList.toggle('calendar__cell-inner--open');
+                }
 
-      this.calendarWrapper
-          .querySelector('.handler-wrapper')
-          .appendChild(next);
-  }
 
-  renderEvents(date) {
-      const month = this.currentDate.getMonth();
-      const year = this.currentDate.getFullYear();
-      const key = `${date}-${month}-${year}`;
+            });
+    }
 
-      if (!this.events[key]) return '';
+    renderHandlers() {
+        // button to move to the previous month
+        const prev = document.createElement('button');
+        prev.innerText = 'Prev';
+        prev.addEventListener('click', () => {
+            let cm = this.currentMonth - 1;
+            if (cm < 0) cm = 12;
+            this.currentMonth = cm;
+        });
 
-      return this.events[key].events.map(event => {
-          return `
-              ${event.time} - ${event.message} - ${event.priority}
+        this.calendarWrapper
+            .querySelector('.handler-wrapper')
+            .appendChild(prev);
+
+        // field to display current month
+        this.monthField = document.createElement('input');
+        const currentMonth = this.months[this.currentMonth];
+        this.monthField.value = currentMonth;
+        this.calendarWrapper
+            .querySelector('.handler-wrapper')
+            .appendChild(this.monthField);
+
+        // button to move to the next month
+        const next = document.createElement('button');
+        next.innerText = 'Next';
+        next.addEventListener('click', () => {
+            let cm = this.currentMonth + 1;
+            if (cm > 11) cm = 0;
+            this.currentMonth = cm;
+        });
+
+        this.calendarWrapper
+            .querySelector('.handler-wrapper')
+            .appendChild(next);
+    }
+
+    renderEvents(date) {
+        const month = this.currentDate.getMonth();
+        const year = this.currentDate.getFullYear();
+        const key = `${date}-${month}-${year}`;
+
+        if (!this.events[key]) return '';
+
+        let btn = '';
+        if(this.events[key].events.length > 4){
+            btn = `<button data-events="${key}">...</button>`
+        }
+
+        return this.events[key].events.slice(0, 4).map(event => {
+            return `
+          <div class="event">
+          <div class="event__priority event__priority--${event.priority}">
+          </div>
+          <div class="event__message">${event.message}</div>
+          </div>
+
           `
-      }).join('');
-  }
+            //   ${event.time}
+        }).join('') + btn;
+        // <button data-events="${char}">...</button>
+    }
 
-  render() {
-      sessionStorage.date = this.currentDate;
+    render() {
+        sessionStorage.date = this.currentDate;
 
-      let calendarTable = `
+        let calendarTable = `
           <table class="calendar">
               <thead>
                   <tr class="calendar__row">
                       ${
-                          this.days.map(day => 
+                          this.days.map(day =>
                               `<th class="calendar__head-cell">${day}</th>`
                           ).join('')
                       }
@@ -307,12 +335,13 @@ class Calendar {
           </table>
       `;
 
-      this.calendarWrapper
-          .querySelector('.calendar-wrapper')
-          .innerHTML = calendarTable;
+        this.calendarWrapper
+            .querySelector('.calendar-wrapper')
+            .innerHTML = calendarTable;
 
-      this.initContextEvents();
-  }
+        this.initContextEvents();
+        this.initEventsModal();
+    }
 }
 
 window.asd = new Calendar('#app');
@@ -332,7 +361,7 @@ window.asd = new Calendar('#app');
 
 const clock = document.getElementById('clock');
 
-function oClock(){
+function oClock() {
     let time = new Date();
     let h = (time.getHours() % 24).toString();
     let m = time.getMinutes().toString();
@@ -354,4 +383,4 @@ function oClock(){
     clock.textContent = clockString;
 }
 oClock();
-setInterval (oClock, 1000);
+setInterval(oClock, 1000);

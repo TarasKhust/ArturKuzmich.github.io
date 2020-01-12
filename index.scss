@@ -160,7 +160,7 @@ a:hover {
 
 
 .wrapper__block {
-
+    
     min-height: 100vh;
 }
 
@@ -669,6 +669,7 @@ li::after {
 
 .title {
     width: 21ch;
+    margin-left: 33%;
     font-family: monospace;
     color: white;
     font-size: 40px;
@@ -682,7 +683,7 @@ li::after {
 .titl {
     color: #4e75f6;
     width: 23ch;
-    margin-top: 14%;
+    margin-top: 10%;
     font-family: monospace;
     font-size: 40px;
     white-space: nowrap;

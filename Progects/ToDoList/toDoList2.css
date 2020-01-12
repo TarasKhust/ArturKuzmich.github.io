@@ -20,6 +20,7 @@ ul {
     margin: 0;
     padding: 0;
     list-style: none;
+    cursor: pointer;
 }
 
 ul li {
@@ -79,6 +80,7 @@ ul li.checked::before {
     padding: 12px 16px 12px 16px;
     background: unset;
     float: right;
+    cursor: pointer;
 }
 
 .close:hover {

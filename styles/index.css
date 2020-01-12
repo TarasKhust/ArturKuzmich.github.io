@@ -168,8 +168,13 @@ a:hover {
   justify-content: flex-end;
 }
 
+.wrapper__block1 {
+  min-height: 100vh;
+}
 .wrapper__block {
   min-height: 100vh;
+  background: rgb(17, 16, 16);
+  
 }
 
 p {
@@ -314,6 +319,7 @@ h3 {
   overflow: hidden;
   padding: 3%;
   width: 24.9%;
+  margin-left: 75px;
 }
 
 .isotopewrap .work-item {
@@ -681,6 +687,7 @@ li::after {
   width: 21ch;
   font-family: monospace;
   color: white;
+  margin-left: 33%;
   font-size: 40px;
   white-space: nowrap;
   overflow: hidden;
@@ -690,8 +697,8 @@ li::after {
 }
 
 .titl{
-  width: 23ch;
-  margin-top: 14%;
+  width: 30ch;
+  margin-top: 10%;
   font-family: monospace;
   color: #4e75f6;
   font-size: 40px;
@@ -796,3 +803,10 @@ li::after {
     margin-top: 50%;
   }
 }
+
+
+
+
+
+
+
