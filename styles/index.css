@@ -171,10 +171,11 @@ a:hover {
 .wrapper__block1 {
   min-height: 100vh;
 }
+
 .wrapper__block {
   min-height: 100vh;
   background: rgb(17, 16, 16);
-  
+
 }
 
 p {
@@ -478,6 +479,14 @@ only screen and (max-device-width: 767px) {
   transition-duration: 0.8s;
 }
 
+.btn-danger {
+  position: absolute;
+  top: 17px;
+  cursor: pointer;
+  color: #f1f1f1;
+  left: 65px;
+}
+
 @media screen and (max-width: 600px) {
   .navigation {
     float: right;
@@ -683,7 +692,7 @@ li::after {
   }
 }
 
-.title{
+.title {
   width: 21ch;
   font-family: monospace;
   color: white;
@@ -692,11 +701,11 @@ li::after {
   white-space: nowrap;
   overflow: hidden;
   border-right: 4px orange;
-  animation: flashing-border 0.75s step-end infinite, 
-  printed-text 5s steps(21);
+  animation: flashing-border 0.75s step-end infinite,
+    printed-text 5s steps(21);
 }
 
-.titl{
+.titl {
   width: 30ch;
   margin-top: 10%;
   font-family: monospace;
@@ -704,29 +713,31 @@ li::after {
   font-size: 40px;
   white-space: nowrap;
   overflow: hidden;
-  animation: flashing-border 0.75s step-end infinite, 
-  printed-text 5s steps(21);
+  animation: flashing-border 0.75s step-end infinite,
+    printed-text 5s steps(21);
 }
 
 @keyframes flashing-border {
   0% {
-      border-color: orange;
+    border-color: orange;
   }
-  50%{
-      border-color: transparent;
+
+  50% {
+    border-color: transparent;
   }
+
   100% {
-      border-color: orange;
+    border-color: orange;
   }
 }
 
-@keyframes printed-text{
+@keyframes printed-text {
   from {
-      width: 0;
+    width: 0;
   }
 }
 
-.Im_Block{
+.Im_Block {
   display: flex;
   justify-content: center;
   color: #4e75f6;
@@ -734,26 +745,26 @@ li::after {
 
 
 @media screen and (max-width: 991px) {
-  .background-image{
-       width: 100%;
+  .background-image {
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .background-image{
-       width: 475px;
+  .background-image {
+    width: 475px;
   }
 }
 
 
 @media screen and (max-width: 991px) {
-  .navigation{
+  .navigation {
     width: 65%;
   }
 }
 
 @media screen and (max-width: 991px) {
-  .navigation>ul{
+  .navigation>ul {
     width: 100%;
     display: block;
     height: 100%;
@@ -761,7 +772,7 @@ li::after {
 }
 
 @media screen and (max-width: 991px) {
-  .active{
+  .active {
     margin-left: 0px;
     margin-top: 0;
     float: left;
@@ -769,7 +780,7 @@ li::after {
 }
 
 @media screen and (max-width: 480px) {
-  .active{
+  .active {
     float: none;
     width: 24%;
     margin-left: 118px;
@@ -778,13 +789,13 @@ li::after {
 }
 
 @media screen and (max-width: 991px) {
-  .Im_Block{
+  .Im_Block {
     width: 62%;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .Im_Block{
+  .Im_Block {
     width: 90%;
   }
 }
@@ -792,21 +803,12 @@ li::after {
 
 
 @media screen and (max-width: 991px) {
-  .titl{
-    
-  }
+  .titl {}
 }
 
 @media screen and (max-width: 480px) {
-  .titl{
+  .titl {
     font-size: 20px;
     margin-top: 50%;
   }
 }
-
-
-
-
-
-
-

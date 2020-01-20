@@ -160,7 +160,7 @@ a:hover {
 
 
 .wrapper__block {
-    
+
     min-height: 100vh;
 }
 
@@ -455,6 +455,15 @@ only screen and (max-device-width: 767px) {
     transition-duration: 0.8s;
 }
 
+
+.btn-danger {
+    position: absolute;
+    top: 17px;
+    cursor: pointer;
+    color: #f1f1f1;
+    left: 65px;
+}
+
 @media screen and (max-width: 600px) {
 
     .navigation {
@@ -717,7 +726,3 @@ li::after {
     justify-content: center;
     color: #4e75f6;
 }
-
-
-
-
