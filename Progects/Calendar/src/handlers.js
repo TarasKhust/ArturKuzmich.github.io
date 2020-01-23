@@ -4,7 +4,7 @@ export function renderHandlers() {
     prev.innerText = 'Prev';
     prev.addEventListener('click', () => {
         let cm = this.currentMonth - 1;
-        if (cm < 0) cm = 12;
+        if (cm < 0) cm = 11;
         this.currentMonth = cm;
     });
 

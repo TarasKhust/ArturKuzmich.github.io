@@ -1,8 +1,8 @@
-export default function() {
-    
-        sessionStorage.date = this.currentDate;
+export default function () {
 
-        let calendarTable = `
+    sessionStorage.date = this.currentDate;
+
+    let calendarTable = `
           <table class="calendar">
               <thead>
                   <tr class="calendar__row">
@@ -20,7 +20,7 @@ export default function() {
                               ${
                                   row.map(char =>
                                       `<td class="calendar__cell" data-date="${char}">
-                                          <div class="calendar__cell-inner">
+                                          <div class="calendar__cell-inner" data-events="${char}">
                                               <span class="calendar__date">
                                                   ${char}
                                               </span>
@@ -39,10 +39,10 @@ export default function() {
       `;
 
 
-this.calendarWrapper
-.querySelector('.calendar-wrapper')
-.innerHTML = calendarTable;
+    this.calendarWrapper
+        .querySelector('.calendar-wrapper')
+        .innerHTML = calendarTable;
 
-this.initContextEvents();
-this.initEventsModal();
+    this.initContextEvents();
+    this.initEventsModal();
 }

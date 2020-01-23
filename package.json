@@ -1,0 +1,26 @@
+{
+  "name": "arturkuzmich.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx webpack --config webpack_configs/webpack-config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArturKuzmich/ArturKuzmich.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArturKuzmich/ArturKuzmich.github.io/issues"
+  },
+  "homepage": "https://github.com/ArturKuzmich/ArturKuzmich.github.io#readme",
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  }
+}

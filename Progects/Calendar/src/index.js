@@ -1,3 +1,5 @@
+import './index.scss';
+
 import {
     months,
     days
@@ -8,29 +10,31 @@ import {
 } from './handlers.js';
 import render from './render.js';
 import {
-    addNewEvent, parseEvents
+    addNewEvent,
+    parseEvents
 } from './events.js';
 
 import utils, {
     get,
-    create, on
+    create,
+    on
 } from './utils.js';
 
 
 
 
 class Calendar {
-    calendarWrapper = null;
-    months = months;
-    days = days;
 
-    currentDate = null;
-    currentMonthName = null;
-    monthField = null;
-    events = {};
-    selectedDate = null;
 
     constructor(selector) {
+        this.calendarWrapper = null;
+        this.months = months;
+        this.days = days;
+        this.currentDate = null;
+        this.currentMonthName = null;
+        this.monthField = null;
+        this.events = {};
+        this.selectedDate = null;
         this.calendarWrapper = utils.get(selector);
         const date = sessionStorage.date;
         if (date) {
@@ -179,8 +183,27 @@ class Calendar {
                 const eventsDate = e.target.dataset.events;
 
                 const cell = e.target.closest('.calendar__cell-inner');
+
+
+
                 if (cell) {
+
+                    const {
+                        events
+                    } = cell.dataset;
+
+                    if (cell.className.includes('calendar__cell-inner--open')) {
+                        this.currentCheckedCell = null;
+
+                    } else {
+
+                        this.currentCheckedCell = events;
+                    }
+
                     cell.classList.toggle('calendar__cell-inner--open');
+
+                    cell.querySelector('.calendar__events')
+                        .innerHTML = this.renderEvents(events);
                 }
 
 
@@ -190,6 +213,7 @@ class Calendar {
 
 
     renderEvents(date) {
+        console.log(date)
         const month = this.currentDate.getMonth();
         const year = this.currentDate.getFullYear();
         const key = `${date}-${month}-${year}`;
@@ -201,7 +225,12 @@ class Calendar {
             btn = `<button data-events="${key}">...</button>`
         }
 
-        return this.events[key].events.slice(0, 4).map(event => {
+        let eventsList = this.events[key].events;
+        if (this.currentCheckedCell != date) {
+            eventsList = eventsList.slice(0, 4)
+        }
+
+        return eventsList.map(event => {
             return `
           <div class="event">
           <div class="event__priority event__priority--${event.priority}">
