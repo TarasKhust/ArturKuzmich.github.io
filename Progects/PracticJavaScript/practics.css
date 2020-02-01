@@ -1,0 +1,139 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.container {
+    width: 100%;
+    display: block;
+    justify-content: center;
+    height: 50px;
+    text-align: center;
+}
+
+.container-2 {
+    width: 100%;
+    display: block;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+
+}
+
+#brend {
+    border-radius: 40px;
+    border: 3px solid;
+}
+
+
+#carName {
+    border-radius: 40px;
+    border: 3px solid;
+}
+
+.sub_menu {
+    overflow: hidden;
+    transition: all 0.5s ease-in;
+    height: 0;
+    opacity: 0;
+}
+
+
+/* ___________________________ */
+
+.tree span:hover {
+    font-weight: bold;
+}
+
+.tree span {
+    cursor: pointer;
+}
+
+.hide::before {
+    content: "+";
+}
+
+.show::before {
+    content: "-";
+}
+
+
+/* __________________________ */
+
+
+.hero {
+    width: 100%;
+    min-height: 100vh;
+
+}
+
+.wrapper {
+    max-width: 1024px;
+    margin: 0 auto;
+
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 100px 0;
+}
+
+.list__caption {
+    width: calc(25% - 40px);
+    margin: 20px;
+    list-style: none;
+    font-weight: bold;
+    color: #0747a6;
+}
+
+.list__cell {
+    width: calc(25% - 40px);
+    margin: 0 20px;
+    min-height: 150px;
+    list-style: none;
+    box-shadow: 0px 0px 7px 5px rgba(0, 0, 0, 0.2);
+    background-color: #f0f5f2;
+    overflow: hidden;
+}
+
+.list__card {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+    cursor: all-scroll;
+    min-height: 100%;
+}
+
+.list__card-header {
+    font-weight: bold;
+    padding: 12px 20px;
+    background-color: #0747a6;
+    color: white;
+}
+
+.list_card-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    padding: 12px 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.hide {
+    display: none;
+}
+
+.hovered {
+    background-color: #d1d8e2;
+}

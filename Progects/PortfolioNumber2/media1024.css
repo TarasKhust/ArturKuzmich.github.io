@@ -1,0 +1,42 @@
+@media (max-width: 1024px) {
+
+    .home-page .text-zone,
+    .text-page .text-zone {
+        width: 80%;
+        min-height: 0;
+    }
+}
+
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 54px !important;
+        line-height: 45px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .bg {
+        width: 263px;
+        height: 400px;
+    }
+}
+
+
+
+
+@media (max-width: 1024px) {
+    .container.about .text-zone {
+        width: 40%;
+    }
+}
+
+
+
+@media (max-width: 1024px) {
+
+    .text-page .text-zone h1:before,
+    .container.about .text-zone h1:before,
+    .container.contact .text-zone h1:before {
+        margin-top: -29px;
+    }
+}

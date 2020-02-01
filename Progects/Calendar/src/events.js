@@ -1,9 +1,16 @@
-import  render  from './render.js';
+import render from './render.js';
 
 
-export  function addNewEvent(event) {
+export function addNewEvent(event) {
     event.preventDefault();
     const form = event.target;
+
+    let id;
+    if (this.currentEvent) {
+        id = this.currentEvent.id
+    } else {
+        id = Math.random();
+    }
 
     const message = form.elements.message.value;
     const time = form.elements.time.value;
@@ -14,33 +21,40 @@ export  function addNewEvent(event) {
     const year = this.currentDate.getFullYear();
     const key = `${day}-${month}-${year}`;
 
-    if (this.events[key]) {
+    if (this.currentEvent) {
+        const event = this.events[date].events.find(event => event.id === id);
+
+    } else if (this.currentEvent) {
+        const event = this.events.push({});
+    } else(this.events[key]) {
         this.events[key].events.push({
             message,
             time,
-            priority
+            priority,
+            id
         });
     } else {
         this.events[key] = {
             'events': [{
                 message,
                 time,
-                priority
+                priority,
+                id
             }]
         }
     }
     localStorage.calendar = JSON.stringify(this.events);
 
-        this.closeModal();
-        render.apply(this);
-        
-    }
+    this.closeModal();
+    render.apply(this);
+
+}
 
 
-    export  function parseEvents() {
-        try {
-            this.events = JSON.parse(localStorage.calendar);
-        } catch (e) {
-            this.events = {}
-        }
+export function parseEvents() {
+    try {
+        this.events = JSON.parse(localStorage.calendar);
+    } catch (e) {
+        this.events = {}
     }
+}
