@@ -75,6 +75,14 @@
     }
 }
 
+@media (max-width: 530px) {
+    h1 {
+        font-size: 27px !important;
+        line-height: 40px !important;
+    }
+
+}
+
 
 
 @media (max-width: 530px) {
@@ -94,11 +102,49 @@
     }
 }
 
+#mobile-link :hover {
+    color: #08fdd8;
+}
 
 
 @media (max-width: 530px) {
     .home-page .text-zone {
         width: 85%;
         left: 5%;
+    }
+}
+
+
+@media (max-width: 530px) {
+
+    .c,
+    .h,
+    .js,
+    .wp,
+    .v {
+        position: relative;
+        width: 70%;
+        float: left;
+        margin-left: 6px;
+    }
+}
+
+
+
+
+@media (max-width: 530px) {
+    .contact-form ul li.half {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+
+@media (max-width: 530px) {
+    .inf-mp {
+        margin-left: 3%;
+        width: 80%;
+        position: static;
+        clear: both;
     }
 }

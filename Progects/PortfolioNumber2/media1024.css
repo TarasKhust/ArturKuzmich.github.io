@@ -40,3 +40,41 @@
         margin-top: -29px;
     }
 }
+
+
+/* ______________________________________________ */
+
+@media (max-width: 1024px) {
+    .container.contact .text-zone {
+        width: 36%;
+    }
+}
+
+
+@media (max-width: 1024px) {
+
+    .text-page .text-zone h1:before,
+    .container.about .text-zone h1:before,
+    .container.contact .text-zone h1:before {
+        margin-top: -29px;
+    }
+}
+
+
+@media (max-width: 1024px) {
+
+    .text-page .text-zone h1:after,
+    .container.about .text-zone h1:after,
+    .container.contact .text-zone h1:after {
+        bottom: -40px;
+    }
+}
+
+
+
+@media (max-width: 1024px) {
+    .inf-mp {
+        top: -10px;
+        right: 25%;
+    }
+}
