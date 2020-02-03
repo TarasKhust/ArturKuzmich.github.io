@@ -148,3 +148,21 @@
         clear: both;
     }
 }
+
+
+
+
+@media only screen and (max-width: 376px) {
+    .thumbs li {
+        float: left;
+        width: 44.16666666666%;
+        margin: 0 5% 5% 0;
+        margin-top: 115px;
+    }
+}
+
+@media only screen and (max-width: 376px) {
+    .thumbs li:nth-child(2n) {
+        margin-right: 0;
+    }
+}

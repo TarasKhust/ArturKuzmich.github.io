@@ -499,7 +499,11 @@ i {
     color: white;
 }
 
-li::before {
+.c::before,
+.h::before,
+.js::before,
+.wp::before,
+.v::before {
     position: absolute;
     left: 0;
     top: calc(100% + 10px);
@@ -512,7 +516,11 @@ li::before {
 }
 
 
-li::after {
+.c::after,
+.h::after,
+.js::after,
+.wp::after,
+.v::after {
     position: absolute;
     left: 0;
     top: calc(100% + 10px);
@@ -859,4 +867,79 @@ input[type=submit] {
 
 .inf-mp span span {
     color: #08fdd8;
+}
+
+
+
+/* ___________________________________________________________ */
+
+.thumbs {
+    list-style: none;
+    position: relative;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    margin-left: 65px;
+    overflow: auto;
+}
+
+.clearfix::before {
+    display: table;
+    content: "";
+}
+
+.clearfix::after {
+    clear: both;
+}
+
+
+
+
+.thumbs li {
+    float: none;
+    margin: 0 0 1.5em 0;
+    background: repeating-radial-gradient(black, transparent 100px);
+    padding: 5% 5% 0 5%;
+    position: relative;
+    display: block;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+    width: 250px;
+    height: 150px;
+}
+
+.thumbs li a {
+    text-decoration: none;
+    display: block;
+    position: relative;
+    color: #333333;
+    height: 100%;
+}
+
+
+.thumbs li a img {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    margin: 0;
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
 }
