@@ -1,0 +1,120 @@
+.root {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    animation: spin 3s infinite;
+}
+
+.root .rounder {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+}
+
+.tl {
+    top: 0;
+    left: 0;
+    background: red;
+    animation: tl 3s infinite;
+}
+
+.tr {
+    top: 0;
+    right: 0;
+    background: green;
+    animation: tr 3s infinite;
+}
+
+.br {
+    bottom: 0;
+    right: 0;
+    background: blue;
+    animation: br 3s infinite;
+}
+
+.bl {
+    bottom: 0;
+    left: 0;
+    background: yellow;
+    animation: bl 3s infinite;
+}
+
+@keyframes tl {
+    0% {
+        top: 0%;
+        transform: rotate(360deg);
+    }
+
+    50% {
+        top: 175%
+    }
+
+    100% {
+        top: 0%;
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes tr {
+    0% {
+        right: 0%;
+        transform: rotate(360deg);
+    }
+
+    50% {
+        right: 175%
+    }
+
+    100% {
+        right: 0%;
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes br {
+    0% {
+        bottom: 0%;
+        transform: rotate(360deg);
+    }
+
+    50% {
+        bottom: 175%
+    }
+
+    100% {
+        bottom: 0%;
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes bl {
+    0% {
+        left: 0%;
+        transform: rotate(360deg);
+    }
+
+    50% {
+        left: 175%
+    }
+
+    100% {
+        left: 0%;
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}

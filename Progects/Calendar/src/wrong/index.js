@@ -7,9 +7,6 @@ function generateRounders(count = 1, rounders = []) {
     }
 
     const tl = document.createElement('div')
-
-
-
     tl.classList.add('rounder')
     tl.classList.add('tl');
 
@@ -25,12 +22,12 @@ function generateRounders(count = 1, rounders = []) {
     bl.classList.add('rounder')
     bl.classList.add('bl');
 
-    // rounders.forEach(rounder => {
-    //     tl.appendChild(rounder.cloneNode(true))
-    //     tr.appendChild(rounder.cloneNode(true))
-    //     br.appendChild(rounder.cloneNode(true))
-    //     bl.appendChild(rounder.cloneNode(true))
-    // })
+    rounders.forEach(rounder => {
+        tl.appendChild(rounder.cloneNode(true))
+        tr.appendChild(rounder.cloneNode(true))
+        br.appendChild(rounder.cloneNode(true))
+        bl.appendChild(rounder.cloneNode(true))
+    })
 
     return generateRounders(--count, [tl, tr, br, bl]);
 }
