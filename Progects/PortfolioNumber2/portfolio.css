@@ -108,7 +108,7 @@ i {
     list-style: none;
     text-align: center;
     margin: 0;
-    top: 60%
+    top: 55%
 }
 
 
@@ -509,7 +509,6 @@ i {
     top: calc(100% + 10px);
     height: 12px;
     width: 100%;
-    background: #4e75f6;
     border-radius: 8px;
     content: "";
     box-shadow: 0 0 10px #fff;
@@ -645,7 +644,7 @@ li {
 
 
 .container.contact .text-zone h1:after {
-    content: '<h1/>';
+    content: '</h1>';
     font-family: 'La Belle Aurore', cursive;
     color: #515152;
     font-size: 18px;
