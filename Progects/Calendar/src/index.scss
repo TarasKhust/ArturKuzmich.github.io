@@ -1,24 +1,26 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
 }
 
-
-.handlers {
-    width: 100%;
-    max-width: 784px;
-    margin: 0 auto;
+.calendar-wrapper {
     display: flex;
-    align-items: baseline;
-
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
+
+.calendar {}
 
 .calendar__cell {
     position: relative;
     width: 150px;
     min-width: 150px;
     height: 150px;
-    background: pink;
+    background: #ffecf0;
+    border-radius: 4px;
 }
 
 .calendar__cell-inner {
@@ -27,13 +29,13 @@
     left: 0;
     width: 150px;
     height: 150px;
+    background: #ffecf0;
     transition: all ease .5s;
-
+    border-radius: 4px;
 }
 
 .calendar__cell-inner--open {
     z-index: 1;
-    box-sizing: border-box;
     top: -50%;
     left: -50%;
     width: 300px;
@@ -43,13 +45,12 @@
 
 .calendar__date {
     display: block;
-    padding: 2px 6px;
+    padding: 2px 5px;
     font-size: 25px;
     font-weight: bold;
 }
 
 .event {
-    width: 100%;
     display: flex;
 }
 
@@ -57,8 +58,8 @@
     min-width: 20px;
     width: 20px;
     height: 20px;
-    margin-bottom: 5px;
     margin-right: 5px;
+    margin-bottom: 5px;
 }
 
 .event__priority--1 {
@@ -70,42 +71,41 @@
 }
 
 .event__priority--3 {
-    background: purple;
-}
-
-.event__priority--4 {
-    background: orange;
-}
-
-.event__priority--5 {
-    background: blue;
-}
-
-.event__priority--6 {
-    background: floralwhite;
-}
-
-.event__priority--7 {
-    background: coral;
-}
-
-.event__priority--8 {
-    background: grey;
-}
-
-.event__priority--9 {
-    background: red;
-}
-
-.event__priority--10 {
     background: black;
 }
 
+.event__priority--4 {
+    background: gray;
+}
+
+.event__priority--5 {
+    background: peru;
+}
+
+.event__priority--6 {
+    background: plum;
+}
+
+.event__priority--7 {
+    background: purple;
+}
+
+.event__priority--8 {
+    background: pink;
+}
+
+.event__priority--9 {
+    background: orange;
+}
+
+.event__priority--10 {
+    background: red;
+}
+
 .event__message {
-    flex-wrap: nowrap;
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-
 }
 
 .context {
@@ -113,34 +113,33 @@
     position: absolute;
     width: 150px;
     max-width: 150px;
-    border-radius: 4px;
     background: white;
+    border-radius: 4px;
     box-shadow: 1px 1px 5px -3px;
-
 }
 
 .context__item {
+    padding: 2px 10px;
     font-size: 20px;
     font-weight: bold;
-    padding: 2px 10px;
     cursor: pointer;
 }
-
 
 .context__item:hover {
     background: #ffecf0;
 }
 
 .modal {
-    width: 320px;
-    max-width: 320px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: none;
+    width: 320px;
+    max-width: 320px;
+    padding: 0px 15px 15px 15px;
+    background: white;
     border-radius: 4px;
-    padding: 10px 5px;
     box-shadow: 1px 1px 5px -3px;
 }
 
@@ -151,33 +150,37 @@
 }
 
 .modal__close {
+    font-size: 31px;
+    transform: scaleY(.8);
+    color: #a7a4a4;
     cursor: pointer;
 }
 
 .modal__field {
-    margin-bottom: 10px;
     display: flex;
     flex-wrap: wrap;
-    font-size: 22px;
-    font-weight: bold;
-
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #8a8989;
 }
 
 .modal__field input,
 .modal__field textarea {
     width: 100%;
-    padding: 5px;
     margin: 7px 0;
-    border-radius: 4px;
-    border: 1px solid #cbcbcb;
+    padding: 5px;
+    border: none;
     outline: none;
+    border-bottom: 1px solid #a2a2a2;
+}
 
+.modal__field textarea {
+    min-height: 100px;
 }
 
 .modal__btn-wrapper {
     display: flex;
     justify-content: space-between;
-
 }
 
 .modal__btn {
@@ -186,33 +189,24 @@
     border: none;
     outline: none;
     border-radius: 4px;
-    background: #0cd90c;
     color: white;
-    font-size: 22px;
+    font-size: 15px;
     font-weight: bold;
 }
 
 .modal__btn--red {
-    background: red;
+    background: #f18078;
 }
 
 .modal__btn--green {
-    background: green;
-
+    background: #25c325;
 }
 
-
-
-
-
-
-/* Clock+++ */
-
-#clock {
-    font-weight: 300;
-    font-size: 100px;
-    width: 50%;
-    border: 5px solid pink;
-    position: fixed;
-    background: antiquewhite;
+.handlers {
+    width: 100%;
+    max-width: 784px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

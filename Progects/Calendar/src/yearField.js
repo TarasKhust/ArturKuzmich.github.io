@@ -1,9 +1,11 @@
-import './yearField.scss'
+import './yearField.scss';
 
 export default class {
     constructor({
         selector,
-        eventHandler
+        eventHandler,
+        min,
+        max
     }) {
         this.selector = selector;
         this.eventHandler = eventHandler;
@@ -21,14 +23,14 @@ export default class {
             const target = e.target;
 
             let value = target.value.replace(/\D/g, '');
-            value = value.clice(0, 4);
+            value = value.slice(0, 4);
             if (value.length === 4 && value < this.min) {
                 value = this.min;
             }
-
-            if (value.length = 4 && value > this.max) {
+            if (value.length === 4 && value > this.max) {
                 value = this.max;
             }
+
             target.value = value;
         });
         this.field.addEventListener('change', e => {
@@ -37,6 +39,5 @@ export default class {
 
 
         this.wrapper.appendChild(this.field);
-
     }
 }

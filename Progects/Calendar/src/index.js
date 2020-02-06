@@ -1,18 +1,12 @@
-import YearField from './yearField.js'
-
 import './index.scss';
-import DropDown from './dropDown.js';
-
-
+import DropDown from './dropDown';
+import YearField from './yearField';
 
 import {
     months,
     days
 } from './help.js';
 import weeksListGenerator from './weeksList.js';
-import {
-    renderHandlers
-} from './handlers.js';
 import render from './render.js';
 import {
     addNewEvent,
@@ -26,10 +20,7 @@ import utils, {
 } from './utils.js';
 
 
-
-
 class Calendar {
-
 
     constructor(selector) {
         this.calendarWrapper = null;
@@ -52,26 +43,19 @@ class Calendar {
 
         parseEvents.apply(this);
         this.initWrappers();
-        renderHandlers.apply(this);
         this.renderContext();
         this.initModalHandlers();
         render.apply(this);
-
     }
-
 
     get currentYear() {
         return this.currentDate.getFullYear();
     }
 
-
-
     set currentYear(year) {
         this.currentDate.setFullYear(year);
         render.apply(this);
     }
-
-
 
     get currentMonth() {
         return this.currentDate.getMonth();
@@ -105,7 +89,6 @@ class Calendar {
         const cancel = get('#close-modal');
         const form = document.forms['add-event-modal'];
 
-
         on(close, 'click', this.closeModal.bind(this))
         on(cancel, 'click', this.closeModal.bind(this))
         on(form, 'submit', addNewEvent.bind(this))
@@ -113,25 +96,20 @@ class Calendar {
 
     initWrappers() {
         const html = `
-          <div class="handler-wrapper"></div>
-          <div class="calendar-wrapper"></div>
-          <div class="context-wrapper"></div>
-      `;
+            <div class="handler-wrapper"></div>
+            <div class="calendar-wrapper"></div>
+            <div class="context-wrapper"></div>
+        `;
         this.calendarWrapper.innerHTML = html;
     }
 
     renderContext() {
-
         const contextWrapper = get('.context-wrapper');
-
-
 
         const context = create({
             el: 'div',
             cls: 'context'
         });
-
-
 
         const addItem = create({
             el: 'div',
@@ -139,28 +117,22 @@ class Calendar {
             id: 'add',
             text: 'Add'
         })
-
-
-
-        addItem.addEventListener('click', this.showModal.bind(this));
+        addItem.addEventListener('click', () => this.showModal());
 
         context.appendChild(addItem);
 
         contextWrapper.appendChild(context);
     }
 
-
-
     showModal(event) {
         const modal = get('.modal');
         modal.style.display = 'block';
 
         if (event) {
-
             this.currentEvent = event;
-            document.querySelector('[name ="message"]').value = event.message;
-            document.querySelector('[name ="time"]').value = event.time;
-            document.querySelector('[name ="prioriry"]').value = event.priority;
+            document.querySelector('[name="message"]').value = event.message;
+            document.querySelector('[name="time"]').value = event.time;
+            document.querySelector('[name="priority"]').value = event.priority;
         }
 
         const context = get('.context');
@@ -171,15 +143,12 @@ class Calendar {
         const modal = get('.modal');
         modal.style.display = 'none';
 
+        const form = document['add-event-modal'];
         form.elements.message.value = '';
         form.elements.time.value = '';
         form.elements.priority.value = '';
         this.currentEvent = null;
     }
-
-
-
-
 
     initContextEvents() {
         get('.calendar')
@@ -213,31 +182,26 @@ class Calendar {
         get('.calendar')
             .addEventListener('click', e => {
 
-                const eventsDate = e.target.dataset;
-                const child = e.target.dataset.date;
+                const child = e.target.dataset.id;
+                const childDate = e.target.dataset.date;
                 const parent = e.target.parentNode.dataset.id;
                 const parentDate = e.target.parentNode.dataset.date;
-
 
                 if (child || parent) {
                     const id = child || parent;
                     const date = childDate || parentDate;
 
+                    const event = this.events[date].events.find(event => event.id == id);
 
-                    const event = this.events[date].events.find(event => event.id === id);
                     if (!event) return;
 
+                    event.date = date;
                     this.showModal(event);
-
-
-
 
                     return;
                 }
 
                 const cell = e.target.closest('.calendar__cell-inner');
-
-
 
                 if (cell) {
 
@@ -247,26 +211,19 @@ class Calendar {
 
                     if (cell.className.includes('calendar__cell-inner--open')) {
                         this.currentCheckedCell = null;
-
                     } else {
-
                         this.currentCheckedCell = events;
                     }
 
                     cell.classList.toggle('calendar__cell-inner--open');
-
                     cell.querySelector('.calendar__events')
                         .innerHTML = this.renderEvents(events);
                 }
 
-
             });
     }
 
-
-
     renderEvents(date) {
-
         const month = this.currentDate.getMonth();
         const year = this.currentDate.getFullYear();
         const key = `${date}-${month}-${year}`;
@@ -280,30 +237,25 @@ class Calendar {
 
         let eventsList = this.events[key].events;
         if (this.currentCheckedCell != date) {
-            eventsList = eventsList.slice(0, 4)
+            eventsList = eventsList.slice(0, 4);
         }
 
         return eventsList.map(event => {
             return `
-          <div class="event" data-id="${event.id} data-date${key}">
-          <div class="event__priority event__priority--${event.priority}">
-          </div>
-          <div class="event__message">${event.message}</div>
-          </div>
-
-          `
-            //   ${event.time}
+                <div class="event" data-id="${event.id}" data-date="${key}">
+                    <div
+                        class="event__priority event__priority--${event.priority}"
+                    ></div>
+                    <div class="event__message">${event.message}</div>
+                </div>
+            `
         }).join('') + btn;
-        // <button data-events="${char}">...</button>
     }
-
-
-
 }
+
 window.calendar = new Calendar('#app');
 
-
-window.DropDown = new DropDown({
+window.dropDown = new DropDown({
     selector: '#drop-down',
     itemsList: months.map((value, key) => ({
         key,
@@ -314,7 +266,6 @@ window.DropDown = new DropDown({
     }
 });
 
-
 window.yearField = new YearField({
     selector: '#year-field',
     min: 1970,
@@ -323,42 +274,3 @@ window.yearField = new YearField({
         window.calendar.currentYear = year;
     }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-// Clock+++
-
-// const clock = document.getElementById('clock');
-
-// function oClock() {
-//     let time = new Date();
-//     let h = (time.getHours() % 24).toString();
-//     let m = time.getMinutes().toString();
-//     let s = time.getSeconds().toString();
-
-
-//     if (h.length < 2) {
-//         h = '0' + h;
-//     }
-//     if (m.length < 2) {
-//         m = '0' + m;
-//     }
-//     if (s.length < 2) {
-//         s = '0' + s;
-//     }
-
-//     const clockString = h + ':' + m + ":" + s;
-
-//     clock.textContent = clockString;
-// }
-// oClock();
-// setInterval(oClock, 1000);

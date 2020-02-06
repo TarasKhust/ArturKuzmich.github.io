@@ -1,6 +1,5 @@
 import render from './render.js';
 
-
 export function addNewEvent(event) {
     event.preventDefault();
     const form = event.target;
@@ -11,7 +10,6 @@ export function addNewEvent(event) {
     } else {
         id = Math.random();
     }
-
     const message = form.elements.message.value;
     const time = form.elements.time.value;
     const priority = form.elements.priority.value;
@@ -22,11 +20,12 @@ export function addNewEvent(event) {
     const key = `${day}-${month}-${year}`;
 
     if (this.currentEvent) {
-        const event = this.events[date].events.find(event => event.id === id);
-
-    } else if (this.currentEvent) {
-        const event = this.events.push({});
-    } else(this.events[key]) {
+        const date = this.currentEvent.date;
+        const event = this.events[date].events.find(event => event.id == id);
+        event.message = message;
+        event.time = time;
+        event.priority = priority;
+    } else if (this.events[key]) {
         this.events[key].events.push({
             message,
             time,
@@ -43,13 +42,12 @@ export function addNewEvent(event) {
             }]
         }
     }
+
     localStorage.calendar = JSON.stringify(this.events);
 
     this.closeModal();
     render.apply(this);
-
 }
-
 
 export function parseEvents() {
     try {
