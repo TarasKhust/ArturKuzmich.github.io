@@ -26,7 +26,7 @@
     .tmp::after {
         content: "";
         display: block;
-        border-bottom: 75px solid white;
+        border-bottom: 60px solid white;
         border-right: 50px solid transparent;
     }
 }
@@ -160,7 +160,7 @@
         max-width: 530px;
         border-bottom: 200px solid rgb(51, 60, 64);
         /* border-left: 50px solid transparent; */
-        border-right: 220px solid transparent;
+        border-right: 200px solid transparent;
         opacity: 60%;
     }
 }
