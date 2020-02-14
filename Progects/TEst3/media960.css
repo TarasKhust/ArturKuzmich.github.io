@@ -36,3 +36,13 @@
         margin-bottom: 4em;
     }
 }
+
+
+@media only screen and (max-width: 767px),
+only screen and (max-device-width: 767px) {
+    .background-image {
+        background: url(./img/background.png);
+        position: relative;
+        background-size: cover;
+    }
+}
