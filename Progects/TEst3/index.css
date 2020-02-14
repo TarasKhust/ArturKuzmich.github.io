@@ -364,6 +364,15 @@ img:hover {
   border: 1px solid rgb(25, 143, 161);
 }
 
+.recent2 {
+  position: inherit;
+  background: content-box;
+  color: black;
+  border: none;
+  font-size: 30px;
+  top: 40px;
+}
+
 .about_item {
   position: absolute;
   font-size: 20px;
