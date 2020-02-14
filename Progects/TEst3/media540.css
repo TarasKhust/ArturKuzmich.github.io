@@ -1,13 +1,16 @@
 @media (max-width: 530px) {
     body {
-        overflow-x: hidden;
+        /* overflow-x: hidden; */
     }
 }
 
 @media (max-width: 530px) {
     .background-image {
-        width: 283%;
+
         height: 100%;
+        max-width: 530px;
+        background-size: contain;
+        background-repeat: no-repeat;
     }
 }
 
