@@ -156,7 +156,7 @@
     .opacity__background_left::after {
         content: "";
         position: inherit;
-        display: block;
+        display: none;
         max-width: 530px;
         border-bottom: 200px solid rgb(51, 60, 64);
         /* border-left: 50px solid transparent; */
