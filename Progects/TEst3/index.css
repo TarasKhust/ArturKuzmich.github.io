@@ -101,11 +101,11 @@
 
 .items {
   position: relative;
-  flex-grow: 1;
   text-align: center;
   padding: 0px 20px;
   font-size: 20px;
   cursor: pointer;
+
 }
 
 .items__list {
