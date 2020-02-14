@@ -295,9 +295,7 @@
   height: 150px;
 }
 
-li:hover {
-  border-radius: 4px solid rgb(25, 143, 161);
-}
+
 
 #thumbs li a {
   text-decoration: none;

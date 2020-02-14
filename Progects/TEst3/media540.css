@@ -4,6 +4,13 @@
     }
 }
 
+@media (max-width: 530px) {
+    .background-image {
+        width: 283%;
+        height: 100%;
+    }
+}
+
 @media only screen and (max-width: 376px) {
     #thumbs li {
         float: left;
