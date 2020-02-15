@@ -897,7 +897,7 @@ input[type=submit] {
 .thumbs li {
     float: none;
     margin: 0 0 1.5em 0;
-    background: repeating-radial-gradient(black, transparent 100px);
+
     padding: 5% 5% 0 5%;
     position: relative;
     display: block;
