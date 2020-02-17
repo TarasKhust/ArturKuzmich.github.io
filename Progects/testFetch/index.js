@@ -23,6 +23,7 @@ fetch(`${origin}/everything?domains=wsj.com&apiKey=${apiKey}`)
             return `<option value"${item.id}">${item.name}</option>`
         }).join();
         select.innerHTML = options;
+
     });
 
 
